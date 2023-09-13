@@ -1,0 +1,136 @@
+/* Add here all your CSS customizations */
+
+.box {
+    border: 1px solid #dbdee0;
+}
+.box .box-content .panel ol, .box .box-content .panel ul {
+    padding-left: 20px;
+}
+.box.noOverflow {
+    overflow: hidden;
+}
+.box .box-header {
+    background: white;
+    color: #34383c;
+    font-size: 14px;
+    background: #f7f7f8;
+    border-bottom: 1px solid #dbdee0;
+    height: 20px;
+}
+.box .box-header h2 {
+    float: left;
+    padding: 10px 0px;
+    margin: 0px 0px 0px 20px;
+}
+.box .box-header h2 i {
+    border-right: 1px solid #dbdee0;
+    padding: 12px 0px;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    margin: -10px 20px -10px -20px;
+    font-size: 16px;
+}
+.box .box-header h2 i.nb { 
+    border-right: 0;
+    margin-right: 0;
+}
+.box .box-header .box-icon {
+    float: right;
+}
+.box .box-header .box-icon a:hover {
+    text-decoration: none;
+}
+.box .box-header .box-icon i.icon {
+    display: inline-block;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    padding: 12px 0px;
+    border-left: 1px solid #ced1d4;
+    text-decoration: none;
+}
+.box-icon .choose-date {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color #DBDEE0;
+    border-image: none;
+    border-style: none none none solid;
+    border-width: 0 0 0 1px;
+    height: 40px;
+    padding: 3px 10px;
+    width: 350px;
+}
+.box-icon .choose-date .input-group-addon, .box-icon .choose-date input {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    box-shadow: none;
+}
+.box-icon .choose-date .input-group-addon {
+    font-size: 12px;
+    padding: 0;
+}
+.box-icon .choose-date .input-group-addon i { border: 0; }
+.box-icon .choose-date input {
+    font-weight: 300;
+}
+.box-icon .choose-date input:focus {
+    box-shadow: none;
+    outline: 0 none;
+}
+.box .btn-tasks {
+    list-style: none;
+    margin-bottom: 0;
+}
+.box .btn-tasks li {
+    float: right;
+}
+.box .btn-tasks li li {
+    float: none;
+}
+.box .box-content {
+    padding: 20px;
+    background: white;
+}
+.box .box-content p.introtext{
+    background: #F9F9F9;
+    margin: -20px -20px 20px -20px;
+    padding: 10px;
+    border-bottom: 1px solid #DBDEE0;
+}
+.box .box-content.no-padding {
+    background: white;
+    padding: 1px 0;
+}
+
+.btn-tasks {
+    list-style: none;
+    margin-bottom: 0;
+}
+.btn-tasks li {
+    float: right;
+}
+.btn-tasks li li {
+    float: none;
+}
+.select2-container {
+	display:none;
+}
+
+.select2-container-disabled .select2-chosen, .select2-container-disabled .select2-arrow { cursor: not-allowed; }
+.has-error .redactor_box { border-color: #a94442; }
+.has-success .redactor_box { border-color: #2b542c; }
+.has-error .select2-container .select2-choice { border-color: #a94442; }
+.has-success .select2-container .select2-choice { border-color: #2b542c; }
+.has-error .select2-container-active .select2-choice, .has-error .select2-container-active .select2-choices { border-color: #a94442; box-shadow: 0 0 6px #ce8483; }
+.has-success .select2-container-active .select2-choice, .has-success .select2-container-active .select2-choices { border-color: #2b542c; box-shadow: 0 0 6px #67b168; }
+.select2-container-multi.form-control .select2-choices { border: none !important; }
+.select2-hidden { display:none !important; }
+.select2-container-multi .select2-choices .select2-search-field input.select2-active { background: none !important; }
+.select2-container-multi .select2-choices .select2-search-choice { border: 0; padding: 6px 6px 6px 20px; border-radius: 0; box-shadow: none; background: #F0E1A0; }
+.select2-container-multi .select2-search-choice-close { left:5px; top: 6px; }
+#attrTable td, #attrTable .delAttr, #attrTable .attr-remove-all, .pointer { cursor: pointer; }
+#attrTable td:last-child { cursor: default; }

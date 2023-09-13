@@ -1,0 +1,93 @@
+[
+	{
+		"WorkPass_details": [
+			{
+				"value" : "Not Applicable",
+				"name"	: "N/A"
+			},
+			{
+				"value" : "WP",
+				"name"	: "Work Permit (WP)"
+			},
+			{
+				"value" : "SP",
+				"name"	: "S Pass"
+			},
+			{
+				"value" : "EP",
+				"name"	: "Employment Pass (EP)"
+			}
+		],
+		"WorkPass": [
+			{
+				"value" : "WP",
+				"name"	: "Work Permit (WP)"
+			},
+			{
+				"value" : "SP/EP",
+				"name"	: "S Pass / Employment Pass (EP)"
+			},
+			{
+				"value" : "PR/Singaporean",
+				"name"	: "Permanent Resident (PR) / Singaporean"
+			}
+		],
+		"Interview_status" : [
+			{
+				"value" : "1",
+				"name"	: "Pending"
+			},
+			{
+				"value" : "2",
+				"name"	: "Confirm"
+			}
+		],
+		"Interview_result" : [
+			{
+				"value" : "1",
+				"name"	: "Pending"
+			},
+			{
+				"value" : "2",
+				"name"	: "Offered"
+			},
+			{
+				"value" : "3",
+				"name"	: "Accepted"
+			},
+			{
+				"value" : "4",
+				"name"	: "Declined"
+			}
+		],
+		"Action_status" : [
+			{
+				"value" : "1",
+				"name"	: "Pending"
+			},
+			{
+				"value" : "2",
+				"name"	: "Approved"
+			},{
+				"value" : "3",
+				"name"	: "Rejected"
+			},{
+				"value" : "4",
+				"name"	: "Withdraw"
+			}
+		],
+		"Timesheet_action_status" : [
+			{
+				"value" : "1",
+				"name"	: "Work on Progress"
+			},
+			{
+				"value" : "2",
+				"name"	: "Submitted"
+			},{
+				"value" : "3",
+				"name"	: "Approved"
+			}
+		]
+	}
+]

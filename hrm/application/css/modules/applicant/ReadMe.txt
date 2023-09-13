@@ -1,0 +1,1 @@
+images folder is used for applicant_profile.

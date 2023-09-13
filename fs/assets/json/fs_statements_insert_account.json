@@ -1,0 +1,103 @@
+[
+	{
+		"statement_detailed_profit_or_loss": [
+			{
+				"sections" : [
+					{
+						"list_name" : ""
+					}
+				]
+			}
+		],
+		"statement_comprehensive_income": [
+			{
+				"sections" : [
+					{
+						"list_name"	: "income_list",
+						"load_sub"	: 0,
+						"account_category_code" : ["R000"],
+						"description": ["Revenue"]
+					},
+					{
+						"list_name"	: "other_income_list",
+						"load_sub"	: 0,
+						"account_category_code" : ["I000"],
+						"decription": ["Other income"]
+					},
+					{
+						"list_name"	: "changes_in_inventories",
+						"fs_list_state_comp_income_section_id" : 1,
+						"account_category_code" : [],
+						"sub_account_code" : ["C101", "C102"],
+						"sub_description": ["Opening inventories", "Closing inventories"]
+					},
+					{
+						"list_name"	: "purchases_and_related_costs",
+						"fs_list_state_comp_income_section_id" : 2,
+						"account_category_code" : ["C000"],
+						"description": ["Cost of sales"],
+						"exclude_sub_account_code" : ["C101", "C102"],
+						"exclude_sub_description" : ["Opening inventories", "Closing inventories"]
+					},
+					{
+						"list_name"	: "expense_list",
+						"load_sub"	: 1,
+						"account_category_code" : ["E000"],
+						"decription": ["Expenses"]
+					},
+					{
+						"list_name"	: "pl_be4_tax",
+						"fs_list_state_comp_income_section_id" : 3,
+						"account_category_code" : []
+					},
+					{
+						"list_name"	: "additional_list",
+						"load_sub"	: 0,
+						"account_category_code" : ["T000"],
+						"description": ["Taxation"]
+					},
+					{
+						"list_name"	: "soa_pl_list",
+						"load_sub"	: 0,
+						"account_category_code" : ["S000"],
+						"description": ["Share of associates profit or loss"]
+					},
+					{
+						"list_name"	: "pl_after_tax",
+						"fs_list_state_comp_income_section_id" : 4,
+						"load_sub"	: 0,
+						"account_category_code" : []
+					},
+					{
+						"list_name"	: "other_list",
+						"fs_list_state_comp_income_section_id" : 5,
+						"load_sub"	: 0,
+						"account_category_code" : [""],
+						"description": [""]
+					}
+				]
+			}
+		],
+		"statement_financial_position": [
+			{
+				"for_revenue_reserve" : ["R000", "C000", "I000", "E000", "T000", "D000", "S000"]
+			}
+		],
+		"ntfs": [
+			{
+				"sections" : [
+					{
+						"title" : "Employee benefits expense",
+						"account_category_code" : ["E101"],
+						"arrangement" : [
+							"Note 3 - Employee benefits expense",
+							"Employee benefits expense (first set)",
+							"Employee benefits expense (not first set)",
+							"Note 3 - Employee benefits expense (content)"
+						]
+					}
+				]
+			}
+		]
+	}
+]

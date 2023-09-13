@@ -1,0 +1,424 @@
+[
+	{
+		"Gender": [
+			{
+				"value" : "Male",
+				"name"	: "Male"
+			},
+			{
+				"value" : "Female",
+				"name"	: "Female"
+			}
+		],
+		"Qualification": [
+			{
+				"value"	: "Primary/Secondary School/ 'O' Level",
+				"name"	: "Primary/Secondary School/ 'O' Level"
+			},
+			{
+				"value"	: "Higher Secondary/Pre-U/'A' Level",
+				"name"	: "Higher Secondary/Pre-U/'A' Level"
+			},
+			{
+				"value"	: "Professional Certificate/NiTEC",
+				"name"	: "Professional Certificate/NiTEC"
+			},
+			{
+				"value"	: "Diploma",
+				"name"	: "Diploma"
+			},
+			{
+				"value"	: "Advanced/Higher/Graduate Diploma",
+				"name"	: "Advanced/Higher/Graduate Diploma"
+			},
+			{
+				"value"	: "Bachelor's Degree",
+				"name"	: "Bachelor's Degree"
+			},
+			{
+				"value"	: "Post Graduate Diploma",
+				"name"	: "Post Graduate Diploma"
+			},
+			{
+				"value"	: "Professional Degree",
+				"name"	: "Professional Degree"
+			},
+			{
+				"value"	: "Master's Degree",
+				"name"	: "Master's Degree"
+			},
+			{
+				"value"	: "Doctorate (PhD)",
+				"name"	: "Doctorate (PhD)"
+			}
+		],
+		
+		"Grade": [
+			{
+				"value"	: "Grade A",
+				"name"	: "Grade A"
+			},
+			{
+				"value"	: "Grade B",
+				"name"	: "Grade B"
+			},
+			{
+				"value"	: "Grade C",
+				"name"	: "Grade C"
+			},
+			{
+				"value"	: "Grade D",
+				"name"	: "Grade D"
+			},
+			{
+				"value"	: "1st Class",
+				"name"	: "1st Class"
+			},
+			{
+				"value"	: "2nd Class Upper",
+				"name"	: "2nd Class Upper"
+			},
+			{
+				"value"	: "2nd Class Lower",
+				"name"	: "2nd Class Lower"
+			},
+			{
+				"value"	: "3rd Class",
+				"name"	: "3rd Class"
+			},
+			{
+				"value"	: "CGPA/Percentage",
+				"name"	: "CGPA/Percentage"
+			},
+			{
+				"value"	: "Pass/Non-gradable",
+				"name"	: "Pass/Non-gradable"
+			},
+			{
+				"value"	: "Fail",
+				"name"	: "Fail"
+			},
+			{
+				"value"	: "Incomplete",
+				"name"	: "Incomplete"
+			},
+			{
+				"value"	: "On-going",
+				"name"	: "On-going"
+			}
+		],
+		"FieldOfStudy": [
+			{
+				"value"	: "1",
+				"name"	: "Advertising/Media"
+			},
+			{
+				"value"	: "2",
+				"name"	: "Agriculture/Aquaculture/Forestry"
+			},
+			{
+				"value"	: "3",
+				"name"	: "Airline Operation/Airport Management"
+			},
+			{
+				"value"	: "4",
+				"name"	: "Architecture"
+			},
+
+			{
+				"value"	: "5",
+				"name"	: "Art/Design/Creative Multimedia"
+			},
+			{
+				"value"	: "6",
+				"name"	: "Biology"
+			},
+			{
+				"value"	: "7",
+				"name"	: "BioTechnology"
+			},
+			{
+				"value"	: "8",
+				"name"	: "Business Studies/Administration/Management"
+			},
+			{
+				"value"	: "9",
+				"name"	: "Chemistry"
+			},
+			{
+				"value"	: "10",
+				"name"	: "Commerce"
+			},
+			{
+				"value"	: "11",
+				"name"	: "Computer Science/Information Technology"
+			},
+			{
+				"value"	: "12",
+				"name"	: "Dentistry"
+			},
+			{
+				"value"	: "13",
+				"name"	: "Economics"
+			},
+			{
+				"value"	: "14",
+				"name"	: "Journalism"
+			},
+			{
+				"value"	: "15",
+				"name"	: "Education/Teaching/Training"
+			},
+			{
+				"value"	: "16",
+				"name"	: "Engineering (Aviation/Aeronautics/Astronautics)"
+			},
+			{
+				"value"	: "17",
+				"name"	: "Engineering (Bioengineering/Biomedical)"
+			},
+			{
+				"value"	: "18",
+				"name"	: "Engineering (Chemical)"
+			},
+			{
+				"value"	: "19",
+				"name"	: "Engineering (Civil)"
+			},
+			{
+				"value"	: "20",
+				"name"	: "Engineering (Computer/Telecommunication)"
+			},
+			{
+				"value"	: "21",
+				"name"	: "Engineering (Electrical/Electronic)"
+			},
+			{
+				"value"	: "22",
+				"name"	: "Engineering (Environmental/Health/Safety)"
+			},
+			{
+				"value"	: "23",
+				"name"	: "Engineering (Industrial)"
+			},
+			{
+				"value"	: "24",
+				"name"	: "Engineering (Marine)"
+			},
+			{
+				"value"	: "25",
+				"name"	: "Engineering (Material Science)"
+			},
+			{
+				"value"	: "26",
+				"name"	: "Engineering (Mechanical)"
+			},
+			{
+				"value"	: "27",
+				"name"	: "Engineering (Mechatronic/Electromechanical)"
+			},
+			{
+				"value"	: "28",
+				"name"	: "Engineering (Metal Fabrication/Tool & Die/Welding)"
+			},
+			{
+				"value"	: "29",
+				"name"	: "Engineering (Mining/Mineral)"
+			},
+			{
+				"value"	: "30",
+				"name"	: "Engineering (Others)"
+			},
+			{
+				"value"	: "31",
+				"name"	: "Engineering (Petroleum/Oil/Gas)"
+			},
+			{
+				"value"	: "32",
+				"name"	: "Finance/Accountancy/Banking"
+			},
+			{
+				"value"	: "33",
+				"name"	: "Food & Beverage Services Management"
+			},
+			{
+				"value"	: "34",
+				"name"	: "Food Technology/Nutrition/Dietetics"
+			},
+			{
+				"value"	: "35",
+				"name"	: "Geographical Science"
+			},
+			{
+				"value"	: "36",
+				"name"	: "Geology/Geophysics"
+			},
+			{
+				"value"	: "37",
+				"name"	: "History"
+			},
+			{
+				"value"	: "38",
+				"name"	: "Hospitality/Tourism/Hotel Management"
+			},
+			{
+				"value"	: "39",
+				"name"	: "Human Resource Management"
+			},
+			{
+				"value"	: "40",
+				"name"	: "Humanities/Liberal Arts"
+			},
+			{
+				"value"	: "41",
+				"name"	: "Logistic/Transportation"
+			},
+			{
+				"value"	: "42",
+				"name"	: "Law"
+			},
+			{
+				"value"	: "43",
+				"name"	: "Library Management"
+			},
+			{
+				"value"	: "44",
+				"name"	: "Linguistics/Languages"
+			},
+			{
+				"value"	: "45",
+				"name"	: "Mass Communications"
+			},
+			{
+				"value"	: "46",
+				"name"	: "Mathematics"
+			},
+			{
+				"value"	: "47",
+				"name"	: "Medical Science"
+			},
+			{
+				"value"	: "48",
+				"name"	: "Medicine"
+			},
+			{
+				"value"	: "49",
+				"name"	: "Maritime Studies"
+			},
+			{
+				"value"	: "50",
+				"name"	: "Marketing"
+			},
+			{
+				"value"	: "51",
+				"name"	: "Music/Performing Arts Studies"
+			},
+			{
+				"value"	: "52",
+				"name"	: "Nursing"
+			},
+			{
+				"value"	: "53",
+				"name"	: "Optometry"
+			},
+			{
+				"value"	: "54",
+				"name"	: "Personal Services"
+			},
+			{
+				"value"	: "55",
+				"name"	: "Pharmacy/Pharmacology"
+			},
+			{
+				"value"	: "56",
+				"name"	: "Philosophy"
+			},
+			{
+				"value"	: "57",
+				"name"	: "Physical Therapy/Physiotherapy"
+			},
+			{
+				"value"	: "58",
+				"name"	: "Physics"
+			},
+			{
+				"value"	: "59",
+				"name"	: "Political Science"
+			},
+			{
+				"value"	: "60",
+				"name"	: "Property Development/Real Estate Management"
+			},
+			{
+				"value"	: "61",
+				"name"	: "Protective Services & Management"
+			},
+			{
+				"value"	: "62",
+				"name"	: "Psychology"
+			},
+			{
+				"value"	: "63",
+				"name"	: "Quantity Survey"
+			},
+			{
+				"value"	: "64",
+				"name"	: "Science & Technology"
+			},
+			{
+				"value"	: "65",
+				"name"	: "Secretarial"
+			},
+			{
+				"value"	: "66",
+				"name"	: "Social Science/Sociology"
+			},
+			{
+				"value"	: "67",
+				"name"	: "Sports Science & Management"
+			},
+			{
+				"value"	: "68",
+				"name"	: "Textile/Fashion Design"
+			},
+			{
+				"value"	: "69",
+				"name"	: "Urban Studies/Town Planning"
+			},
+			{
+				"value"	: "70",
+				"name"	: "Veterinary"
+			},
+			{
+				"value"	: "71",
+				"name"	: "Others"
+			}
+		],
+		"Position_level" : [
+			{
+				"value"	: "1",
+				"name"	: "Senior Manager"
+			},
+			{
+				"value"	: "2",
+				"name"	: "Manager"
+			},
+			{
+				"value"	: "3",
+				"name"	: "Senior Executive"
+			},
+			{
+				"value"	: "4",
+				"name"	: "Junior Executive"
+			},
+			{
+				"value"	: "5",
+				"name"	: "Fresh / Entry Level"
+			},
+			{
+				"value"	: "6",
+				"name"	: "Non-Executive"
+			}
+		]
+	}
+]

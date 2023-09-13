@@ -1,0 +1,36 @@
+[
+	{
+		"interview_status": [
+			{
+				"value" : "1",
+				"name"	: "Pending"
+			},
+			{
+				"value" : "2",
+				"name"	: "Confirm"
+			},
+			{
+				"value" : "3",
+				"name"	: "Declined"
+			}
+		],
+		"interview_result": [
+			{
+				"value" : "1",
+				"name"	: "Pending"
+			},
+			{
+				"value" : "2",
+				"name"	: "Offered"
+			},
+			{
+				"value" : "3",
+				"name"	: "Accepted"
+			},
+			{
+				"value" : "4",
+				"name"	: "Declined"
+			}
+		]
+	}
+]

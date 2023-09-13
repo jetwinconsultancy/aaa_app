@@ -1,0 +1,76 @@
+[
+	{
+		"ntfs": [
+			{
+				"name"	: "COMPARATIVE FIGURES",
+				"fs_ntfs_layout_template_default_id" : 105
+			},
+			{
+				"name"	: "GOING CONCERN",
+				"fs_ntfs_layout_template_default_id" : 109,
+				"compare_ref_id" : ["A001 < L100", "Q101 < Q103"]
+			}
+		],
+		"statements": [
+			{
+				"document_name" : "Statement of comprehensive income",
+				"fs_list_statement_doc_type" : 1,
+				"link_note" : ["E101", "T000", "R000", "I101", "S000"],
+				"link_note_not_in_tree" : [
+					{
+						"fs_list_state_comp_income_section_id": 3,
+						"fs_list_statement_doc_type_id": 1,
+						"fs_ntfs_layout_template_default_id": 56,
+						"description": "Profit before tax"
+					}
+				]
+			},
+			{
+				"document_name" : "Statement of financial position",
+				"reference_id" : ["A000", "L000", "Q000"],
+				"link_note" : ["A101", "A102", "A103", "A104", "A105", "A106", "A107", "A108", "A201", "A202", "A203", "A204", "A205", "Q101", "Q102", "L101", "L102", "L201", "L202", "L203"],
+				"fs_list_statement_doc_type" : 2,
+				"description_reference_id": [
+					{
+						"description": "Assets",
+						"account_code": "A000"
+					},
+					{
+						"description": "Liabilities",
+						"account_code": "L000"
+					},
+					{
+						"description": "Equity",
+						"account_code": "Q000"
+					}
+				]
+			},
+			{
+				"document_name" : "Statement of detailed profit or loss",
+				"reference_id" : ["R000", "C000", "I000"],
+				"description_reference_id": [
+					{
+						"description": "Revenue",
+						"account_code": "R000"
+					},
+					{
+						"description": "Cost of Sales",
+						"account_code": "C000"
+					},
+					{
+						"description": "Income",
+						"account_code": "I000"
+					},
+					{
+						"description": "Closing inventories",
+						"account_code": "C102"
+					}
+				]
+			},
+			{
+				"document_name" : "Schedule of operating expenses",
+				"reference_id" : ["E000"]
+			}
+		]
+	}
+]

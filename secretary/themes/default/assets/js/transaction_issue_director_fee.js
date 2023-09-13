@@ -1,0 +1,36 @@
+$(document).on('click',"#submitIssueDirectorFeeInfo",function(e){
+    $('#loadingmessage').show();
+    if($('input[name="address_type"]:checked').val() == "Registered Office Address")
+    {
+      $("#tr_registered_edit input").removeAttr('disabled');
+    }
+    else
+    {
+      $("#tr_registered_edit input").attr('disabled', 'true');
+    }
+    $.ajax({ //Upload common input
+      url: "transaction/add_issue_director_fee",
+      type: "POST",
+      data: $('form#issue_director_fee_form').serialize()+ '&transaction_code=' + $('#transaction_code').val() + '&transaction_task_id=' + $('#transaction_task').val() + '&registration_no=' + $('#uen').val() + '&transaction_master_id=' + $("#transaction_trans #transaction_master_id").val(),
+      dataType: 'json',
+      success: function (response,data) {
+        $('#loadingmessage').hide();
+
+          if (response.Status === 1) 
+          {
+            if($('input[name="address_type"]:checked').val() == "Registered Office Address")
+            {
+              $("#tr_registered_edit input").attr('disabled', 'true');
+            }
+            toastr.success(response.message, response.title);
+            // $("#body_appoint_new_director .row_appoint_new_director").remove();
+            //console.log($("#transaction_trans #transaction_master_id"));
+            //$(".transaction_change_regis_ofis_address_id").val(response.transaction_change_regis_ofis_address_id);
+            $("#transaction_trans #transaction_code").val(response.transaction_code);
+            $("#transaction_trans #transaction_master_id").val(response.transaction_master_id);
+            $("#issue_director_fee_form #transaction_issue_director_fee_id").val(response.transaction_issue_director_fee_id);
+            //getChangeRegOfisInterface(response.transaction_change_regis_office_address);
+          }
+        }
+    });
+});

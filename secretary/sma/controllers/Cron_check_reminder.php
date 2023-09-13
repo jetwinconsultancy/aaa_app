@@ -1,0 +1,746 @@
+<?php
+class Cron_check_reminder extends CI_Controller {
+
+	//php index.php cron_billing message
+    public function message($to = 'Reminder')
+    {
+        echo "Hello {$to}!".PHP_EOL;
+    }
+
+    //php index.php cron_billing check_recurring
+   	public function check_reminder()
+   	{
+   		$today = strtotime(date('Y-m-d'));
+
+   		// $reminder_info = $this->db->query('select * from document_reminder where '.$today.' >= unix_timestamp(STR_TO_DATE(start_on,"%d/%m/%Y"))');
+
+   		// if ($reminder_info->num_rows() > 0) 
+     //    {
+        	//$reminder_info = $reminder_info->result_array();
+
+        	// for($v = 0; $v < count($reminder_info); $v++)
+	        // {
+		   		$client_info = $this->db->query("select * from client where acquried_by = 1 AND deleted != 1");// AND auto_generate = 1
+
+		   		if ($client_info->num_rows() > 0) 
+		        {
+		        	$client_info = $client_info->result_array();
+
+		            for($i = 0; $i < count($client_info); $i++)
+		            {
+		                // $filing_info = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where agm = '' AND company_code='".$client_info[$i]["company_code"]."'"); 
+		                $filing_info = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where company_code='".$client_info[$i]["company_code"]."' order by filing.id DESC LIMIT 2");
+		                //echo json_encode($filing_info->result_array());
+		                if ($filing_info->num_rows() > 0) 
+		                {
+		                	$filing_info = $filing_info->result_array();
+
+		                	//echo json_encode(date('Y-m-d', strtotime($filing_info[0]["year_end"]. ' -'.$reminder_info[$v]["before_year_end"].'day')) == date('Y-m-d'));
+
+		                	// if(date('Y-m-d', strtotime($filing_info[0]["year_end"]. ' -'.$reminder_info[$v]["before_year_end"].'day')) == date('Y-m-d')) //take the filing year end
+
+					        $array = explode(' ', $filing_info[0]["year_end"]);
+					        $year = $array[2];
+							$month = $array[1];
+							$day = $array[0];
+
+						    $new_format_year_end = date('Y-m', strtotime($month.'-'.(int)$year));
+
+						    //echo json_encode($new_format_year_end == date('Y-m-d'));
+
+		                	if($new_format_year_end == "2019-04") //take the filing year end
+		                	{
+		                		$check_selected_reminder = $this->db->query("select document_reminder.*, client_setup_reminder.selected_reminder from client_setup_reminder left join document_reminder on document_reminder.id = client_setup_reminder.selected_reminder where client_setup_reminder.company_code='".$client_info[$i]["company_code"]."' and document_reminder.reminder_tag_id = 5 and document_reminder.active = 1");
+
+		                		//echo json_encode($check_selected_reminder->result_array());
+
+		                		if ($check_selected_reminder->num_rows() > 0) 
+			                	{	
+			                		$check_selected_reminder = $check_selected_reminder->result_array();
+			                		for($v = 0; $v < count($check_selected_reminder); $v++)
+	        						{
+				                		$client_contact_info = $this->db->query("select * from client_contact_info where company_code='".$client_info[$i]["company_code"]."'");
+				                		//echo json_encode($client_contact_info->result_array());
+				                		if ($client_contact_info->num_rows() > 0) 
+					                	{
+
+					                		$client_contact_info = $client_contact_info->result_array();
+
+					                		//$string = $reminder_info[$v]["document_content"];
+
+											/*if (preg_match('}{', $string))
+											{*/
+											    // one or more of the 'special characters' found in $string
+											    //$result = array();
+											    //$result = explode('}', $string);
+											    
+											//}
+										    $pattern = "/{{[^}}]*}}/";
+											$subject = $check_selected_reminder[$v]["document_content"];
+											preg_match_all($pattern, $subject, $matches);
+
+											//echo json_encode($matches[0]);
+											//$num_of_activity = 1;
+											
+											$new_contents_info = $check_selected_reminder[$v]["document_content"];
+											//print_r(count($matches[0]));
+
+											$new_contents = $this->replaceToggle($matches[0], $client_info[$i]["company_code"], $check_selected_reminder[$v]["firm_id"], $new_contents_info);
+											
+											
+											//echo json_encode($new_contents);
+											//preg_replace('/[^A-Za-z0-9\-]/', '', $string)
+
+
+
+							                $this->load->library('parser');
+
+							                // $select_all_director = $this->db->query("select officer.name, officer_email.email from client_officers left join officer_email on officer_email.officer_id = client_officers.officer_id and officer_email.primary_email = 1 left join officer on officer.id = client_officers.officer_id where client_officers.company_code = '".$client_info[$i]["company_code"]."' and client_officers.position = '1' and client_officers.retiring = '0' and client_officers.field_type = 'individual' and client_officers.date_of_cessation = ''");
+
+							                // if ($select_all_director->num_rows() > 0) 
+			                				// {
+			                				// 	$select_all_director = $select_all_director->result_array();
+
+			                				// 	for($t = 0; $t < count($select_all_director); $t++)
+			                				// 	{
+								                    $parse_data = array(
+								                        'user_name' => "Paul",
+								                        'email' => "paul@acumenbizcorp.com.sg",
+								                        'content' => $new_contents
+								                        /*'reset_password_link' => anchor('auth/reset_password/' . $user->forgotten_password_code, "here"),
+								                        'site_link' => base_url(),
+								                        'backup_link' => site_url('auth/reset_password/' . $user->forgotten_password_code),
+								                        'site_name' => $this->Settings->site_name*/
+								                    );
+
+								                    $msg = file_get_contents('./themes/default/views/email_templates/reminder.html');
+								                    $message = $this->parser->parse_string($msg, $parse_data);
+								                    /*$message = $message . "<br>" . lang('reset_password_link_alt') . "<br>" . site_url('auth/reset_password/' . $user->forgotten_password_code);*/
+
+								                    // $subject = $client_info[$i]["company_name"] . ' - ' . $check_selected_reminder[$v]["reminder_name"];
+
+								                    $subject =  'IMPORTANT DATES REMINDER FOR '.$client_info[$i]["company_name"];
+
+								                    $undersigned = base_url().'img/acumen_bizcorp_header.jpg';
+								                    //<img src="'.$undersigned.'" alt="acumen" width="150" height="60" />
+								                    // $this->sma->send_email($select_all_director[$t]["email"], $subject, $message.'<p>Best regards,<br />Mr. Paul<br />Acumen Bizcorp<br />Address: 143 Cecil Street, #16-03 GB Building, Singapore 069542<br />Tel: (+65) 6220 1939</p>', 'paul@acumenbizcorp.com.sg', 'Acumen Secretary', null, 'looi@acumenbizcorp.com.sg, corpsec@acumenbizcorp.com.sg');
+
+								                    $this->sma->send_email('paul@acumenbizcorp.com.sg', $subject, $message.'<p>Best regards,<br />Mr. Paul Yeap<br />ACUMEN BIZCORP PTE. LTD.<br />Address: 143 Cecil Street, #16-03 GB Building, Singapore 069542<br />Tel: (+65) 6220 1939</p><table style="border: 1px solid black; border-collapse: collapse;"><tbody><tr style="border: 1px solid black;"><td style="border: 1px solid black;"><div style="font-size: 8px; font-family: Calibri, sans-serif; font-style: italic;text-align: justify;"><span>DISCLAIMER: This email and any files transmitted with it contain confidential information and is intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system. If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</span><br/><br/><span>Information contained in this email is general in nature and does not take into account every aspect of your personal situation. You should consider the appropriateness of the information for your needs and if necessary seek professional advice.</span><br/><br/><span>WARNING: Computer viruses can be transmitted via email. The recipient should check this email and any attachments for the presence of viruses. Although the company has taken reasonable precautions to ensure no viruses are present in this email, the company cannot accept responsibility for any loss or damage arising from the use of this email or attachments.</span></div></td></tr></tbody></table>', 'paul@acumenbizcorp.com.sg', 'Acumen Secretary', null, 'then@acumenbizcorp.com.sg,sally@acumenbizcorp.com.sg');
+								               //  }
+							                // }
+						                }
+				                	}
+				                	//echo json_encode($filing_info[0]["year_end"]);
+
+				                	//For Due Date
+				                	// if($filing_info[0]["175_extended_to"] != 0)
+				                	// {
+				                	// 	$due_date_175 = $filing_info[0]["175_extended_to"];
+				                	// }
+				                	// else
+				                	// {
+				                	// 	$due_date_175 = $filing_info[0]["due_date_175"];
+				                	// }
+
+				                	// if($filing_info[0]["201_extended_to"] != 0)
+				                	// {
+				                	// 	$due_date_201 = $filing_info[0]["201_extended_to"];
+				                	// }
+				                	// else
+				                	// {
+				                	// 	$due_date_201 = $filing_info[0]["due_date_201"];
+				                	// }
+
+				                	// if($due_date_175 == "Not Applicable")
+				                	// {
+				                	// 	$due_date = $due_date_201;
+				                	// }
+				                	// else if(strtotime($due_date_175) >= strtotime($due_date_201))
+				                	// {
+				                	// 	$due_date = $due_date_201;
+				                	// }
+				                	// else if(strtotime($due_date_201) >= strtotime($due_date_175))
+				                	// {
+				                	// 	$due_date = $due_date_175;
+				                	// }
+
+				                	// if(date('Y-m-d', strtotime($due_date. ' -'.$reminder_info[$v]["before_due_date"].'day')) == date('Y-m-d')) //take the filing due date
+				                	// {
+				                	// 	$client_contact_info = $this->db->query("select * from client_contact_info where company_code='".$client_info[$i]["company_code"]."'");
+
+				                	// 	if ($client_contact_info->num_rows() > 0) 
+					                // 	{
+					                // 		$client_contact_info = $client_contact_info->result_array();
+
+							              //   $this->load->library('parser');
+						               //      $parse_data = array(
+						               //          'user_name' => $client_contact_info[0]["name"],
+						               //          'email' => $client_contact_info[0]["email"],
+						               //          'content' => $reminder_info[$v]["document_content"]
+						               //      );
+						               //      $msg = file_get_contents('./themes/default/views/email_templates/reminder.html');
+						               //      $message = $this->parser->parse_string($msg, $parse_data);
+
+						               //      $subject = $client_info[$i]["company_name"] . ' - ' . $reminder_info[$v]["type"];
+						               //      $this->sma->send_email($client_contact_info[0]["email"], $subject, $message);
+						               //  }
+				                	//}
+				                }
+			                }
+		                }
+
+		                $filing_agm_info = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where company_code='".$client_info[$i]["company_code"]."' order by filing.id DESC LIMIT 2");
+
+		                if($filing_agm_info->num_rows() > 0)
+		                {
+		                	$filing_agm_info = $filing_agm_info->result_array();
+
+		                	//echo json_encode($filing_agm_info);
+		                	if($filing_agm_info[0]["201_extended_to"] != '0')
+							{
+								$due_date_201 = $filing_agm_info[0]["201_extended_to"];
+							}
+							else
+							{
+								$due_date_201 = $filing_agm_info[0]["due_date_201"];
+							}
+
+							$array = explode(' ', $due_date_201);
+					        $year = $array[2];
+							$month = $array[1];
+							$day = $array[0];
+
+						    $new_format_due_date_201 = date('Y-m', strtotime($month.'-'.(int)$year));
+						    //echo json_encode($new_format_due_date_201);
+		                	//if($new_format_due_date_201 == date('Y-m-d')) //take the filing agm
+		                	if($new_format_due_date_201 == "2019-04")
+		                	{
+		     //            		$array = explode(' ', $filing_info[0]["year_end"]);
+					  //       $year = $array[2];
+							// $month = $array[1];
+							// $day = $array[0];
+
+						 //    $new_format_year_end = date('Y-m-d', strtotime('1'.'-'.$month.'-'.(int)$year));
+
+		                		$check_selected_reminder = $this->db->query("select document_reminder.*, client_setup_reminder.selected_reminder from client_setup_reminder left join document_reminder on document_reminder.id = client_setup_reminder.selected_reminder where client_setup_reminder.company_code='".$client_info[$i]["company_code"]."' and document_reminder.reminder_tag_id = 1 and document_reminder.active = 1");
+		                		//echo json_encode($client_info[$i]["company_name"]);
+		                		if ($check_selected_reminder->num_rows() > 0) 
+			                	{	
+			                		$check_selected_reminder = $check_selected_reminder->result_array();
+
+			                		for($v = 0; $v < count($check_selected_reminder); $v++)
+	        						{
+				                		$client_contact_info = $this->db->query("select * from client_contact_info where company_code='".$client_info[$i]["company_code"]."'");
+				                		//echo json_encode($client_contact_info->result_array());
+				                		if ($client_contact_info->num_rows() > 0) 
+					                	{
+
+					                		$client_contact_info = $client_contact_info->result_array();
+
+					                		//$string = $reminder_info[$v]["document_content"];
+
+											/*if (preg_match('}{', $string))
+											{*/
+											    // one or more of the 'special characters' found in $string
+											    //$result = array();
+											    //$result = explode('}', $string);
+											    
+											//}
+										    $pattern = "/{{[^}}]*}}/";
+											$subject = $check_selected_reminder[$v]["document_content"];
+											preg_match_all($pattern, $subject, $matches);
+
+											//$num_of_activity = 1;
+											
+											$new_contents_info = $check_selected_reminder[$v]["document_content"];
+											//print_r(count($matches[0]));
+
+											$new_contents = $this->replaceToggle($matches[0], $client_info[$i]["company_code"], $check_selected_reminder[$v]["firm_id"], $new_contents_info);
+											
+											
+											//echo json_encode($new_contents);
+											//preg_replace('/[^A-Za-z0-9\-]/', '', $string)
+
+
+
+							                $this->load->library('parser');
+
+							                // $select_all_director = $this->db->query("select officer.name, officer_email.email from client_officers left join officer_email on officer_email.officer_id = client_officers.officer_id and officer_email.primary_email = 1 left join officer on officer.id = client_officers.officer_id where client_officers.company_code = '".$client_info[$i]["company_code"]."' and client_officers.position = '1' and client_officers.retiring = '0' and client_officers.field_type = 'individual' and client_officers.date_of_cessation = ''");
+
+							                //echo json_encode($client_info[$i]["company_name"]);
+
+							                // if ($select_all_director->num_rows() > 0) 
+			                				// {
+			                				// 	$select_all_director = $select_all_director->result_array();
+
+			                				// 	for($t = 0; $t < count($select_all_director); $t++)
+			                				// 	{
+								                    $parse_data = array(
+								                        'user_name' => "Paul",
+								                        'email' => "paul@acumenbizcorp.com.sg",
+								                        'content' => $new_contents
+								                        /*'reset_password_link' => anchor('auth/reset_password/' . $user->forgotten_password_code, "here"),
+								                        'site_link' => base_url(),
+								                        'backup_link' => site_url('auth/reset_password/' . $user->forgotten_password_code),
+								                        'site_name' => $this->Settings->site_name*/
+								                    );
+								                    $msg = file_get_contents('./themes/default/views/email_templates/reminder.html');
+								                    $message = $this->parser->parse_string($msg, $parse_data);
+								                    /*$message = $message . "<br>" . lang('reset_password_link_alt') . "<br>" . site_url('auth/reset_password/' . $user->forgotten_password_code);*/
+
+								                    // $subject = $client_info[$i]["company_name"] . ' - ' . $check_selected_reminder[$v]["reminder_name"];
+
+								                    $subject = 'AGM REMINDER FOR FYE ' .$filing_agm_info[0]["year_end"]. ' - ' . $client_info[$i]["company_name"];
+
+								                    $undersigned = base_url().'img/acumen_bizcorp_header.jpg';
+								                    
+								                    // $this->sma->send_email($select_all_director[$t]["email"], $subject, $message.'<p>Best regards,<br />Paul<br /><img src="'.$undersigned.'" alt="acumen" width="150" height="60" /><br />Address: 143 Cecil Street, #16-03 GB Building, Singapore 069542<br />Tel: (+65) 6220 1939</p>', 'enquiry@acumenbizcorp.com.sg', 'ACT Secretary');
+
+								                    // $this->sma->send_email($select_all_director[$t]["email"], $subject, $message.'<p>Best regards,<br />Mr. Paul<br />Acumen Bizcorp<br />Address: 143 Cecil Street, #16-03 GB Building, Singapore 069542<br />Tel: (+65) 6220 1939</p>', 'paul@acumenbizcorp.com.sg', 'Acumen Secretary', null, 'looi@acumenbizcorp.com.sg, corpsec@acumenbizcorp.com.sg');
+
+								                    $this->sma->send_email('paul@acumenbizcorp.com.sg', $subject, $message.'<p>Best regards,<br />Mr. Paul Yeap<br />ACUMEN BIZCORP PTE. LTD.<br />Address: 143 Cecil Street, #16-03 GB Building, Singapore 069542<br />Tel: (+65) 6220 1939</p><table style="border: 1px solid black; border-collapse: collapse;"><tbody><tr style="border: 1px solid black;"><td style="border: 1px solid black;"><div style="font-size: 8px; font-family: Calibri, sans-serif; font-style: italic; text-align: justify;"><span>DISCLAIMER: This email and any files transmitted with it contain confidential information and is intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system. If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</span><br/><br/><span>Information contained in this email is general in nature and does not take into account every aspect of your personal situation. You should consider the appropriateness of the information for your needs and if necessary seek professional advice.</span><br/><br/><span>WARNING: Computer viruses can be transmitted via email. The recipient should check this email and any attachments for the presence of viruses. Although the company has taken reasonable precautions to ensure no viruses are present in this email, the company cannot accept responsibility for any loss or damage arising from the use of this email or attachments.</span></div></td></tr></tbody></table>', 'paul@acumenbizcorp.com.sg', 'Acumen Secretary', null, 'then@acumenbizcorp.com.sg,sally@acumenbizcorp.com.sg');
+								                //}
+							                //}
+						                }
+				                	}
+				                }
+		                	}
+		                }
+
+		            }
+		        }
+		    //}
+	    //}
+   	}
+
+   	public function replaceToggle($match, $company_code, $firm_id, $new_contents)
+   	{	
+   		//echo json_encode($match);
+   		if(count($match) != 0)
+   		{
+	   		for($r = 0; $r < count($match); $r++)
+			{
+				$string1 = (str_replace('{{', '',$match[$r]));
+				$string2 = (str_replace('}}', '',$string1));
+
+				//print_r($string2 == "Client name");
+				if($string2 == "Company current name")
+				{
+					$replace_string = $match[$r];
+
+					$get_client_name = $this->db->query("select company_name from client where company_code='".$company_code."'");
+
+					$get_client_name = $get_client_name->result_array();
+
+					$content = $get_client_name[0]["company_name"];
+
+				}
+				elseif($string2 == "Year end new")
+				{
+					$replace_string = $match[$r];
+
+					// $year_end_new = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where agm = '' AND company_code='".$company_code."'");
+
+					$year_end_new = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$year_end_new = $year_end_new->result_array();
+
+					$content = $year_end_new[0]["year_end"];
+
+				}
+				elseif($string2 == "ECI date")
+				{
+					$replace_string = $match[$r];
+
+					// $year_end_new = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where agm = '' AND company_code='".$company_code."'");
+
+					$year_end_new = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$year_end_new = $year_end_new->result_array();
+
+					$year_end_plus_three = date('d F Y', strtotime('+3 month', strtotime($year_end_new[0]["year_end"])));
+
+					$eci_month = date('F', strtotime($year_end_plus_three));
+
+					$eci_year = date('Y', strtotime($year_end_plus_three));
+
+					$eci_date = '26 '.$eci_month.' '.$eci_year;
+
+					$content = $eci_date;
+
+				}
+				elseif($string2 == "AGM date")
+				{
+					$replace_string = $match[$r];
+
+					// $agm_date = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where agm != '' AND company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$agm_date = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$agm_date = $agm_date->result_array();
+
+					// if($agm_date[0]["agm"] == 'dispensed')
+					// {
+					// 	$content = 'Dispensed';
+					// }
+					// else
+					// {
+					// 	$content = $agm_date[0]["agm"];
+					// }
+
+					if($agm_date[0]["175_extended_to"] != '0')
+					{
+						$content = $agm_date[0]["175_extended_to"];
+					}
+					else
+					{
+						$content = $agm_date[0]["due_date_175"];
+					}
+					
+
+				}
+				elseif($string2 == "AR date")
+				{
+					$replace_string = $match[$r];
+					
+					// $agm_date = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where agm != '' AND company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$agm_date = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to, due_date_197 from filing where company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$agm_date = $agm_date->result_array();
+
+					// if($agm_date[0]["agm"] != 'dispensed')
+					// {
+					// 	$agm_plus_seven = date('d F Y', strtotime('+7 month', strtotime($agm_date[0]["agm"])));
+					// }
+					// else
+					// {
+					// 	$agm_plus_seven = 'Dispensed';
+					// }
+
+					$content = $agm_date[0]["due_date_197"];
+
+				}
+				elseif($string2 == "Corporate tax date")
+				{
+					$replace_string = $match[$r];
+
+					// $year_end_new = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where agm = '' AND company_code='".$company_code."'");
+
+					$year_end_new = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$year_end_new = $year_end_new->result_array();
+
+					$year_end_plus_one_year = date('Y', strtotime('+1 year', strtotime($year_end_new[0]["year_end"])));
+
+					//$eci_month = date('F', strtotime($year_end_new[0]["year_end"]));
+
+					//$eci_day = date('d', strtotime($year_end_new[0]["year_end"]));
+
+					//$tax_date = $eci_day.' '.$eci_month.' '.$year_end_plus_one_year;
+
+					$tax_date = '30'.' '.'November'.' '.$year_end_plus_one_year;
+
+					$content = $tax_date;
+
+				}
+				elseif($string2 == "Provide financial statement date")
+				{
+					$replace_string = $match[$r];
+
+					// $year_end_new = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where agm = '' AND company_code='".$company_code."'");
+
+					$due_date_175 = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$due_date_175 = $due_date_175->result_array();
+
+					if($agm_date[0]["175_extended_to"] != '0')
+					{
+						$due_date_175 = $agm_date[0]["175_extended_to"];
+					}
+					else
+					{
+						$due_date_175 = $agm_date[0]["due_date_175"];
+					}
+
+					$due_date_175_minus_fifteen_days = date('d F Y', strtotime('-15 days', strtotime($due_date_175)));
+
+					$content = $due_date_175_minus_fifteen_days;
+
+				}
+				elseif($string2 == "Inform date (filing)")
+				{
+					$replace_string = $match[$r];
+
+					// $year_end_new = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where agm = '' AND company_code='".$company_code."'");
+
+					$due_date_175 = $this->db->query("select company_code, year_end, agm, due_date_175, 175_extended_to, due_date_201, 201_extended_to from filing where company_code='".$company_code."' order by filing.id DESC LIMIT 2");
+
+					$due_date_175 = $due_date_175->result_array();
+
+					if($agm_date[0]["175_extended_to"] != '0')
+					{
+						$due_date_175 = $agm_date[0]["175_extended_to"];
+					}
+					else
+					{
+						$due_date_175 = $agm_date[0]["due_date_175"];
+					}
+
+					$due_date_175_minus_seven_days = date('d F Y', strtotime('-7 days', strtotime($due_date_175)));
+
+					$content = $due_date_175_minus_seven_days;
+
+				}
+				elseif($string2 == "Incorporation date")
+				{
+					$replace_string = $match[$r];
+					
+					$get_incorporation_date = $this->db->query("select incorporation_date from client where company_code='".$company_code."'");
+
+					$get_incorporation_date = $get_incorporation_date->result_array();
+
+					$content = $get_incorporation_date[0]["incorporation_date"];
+
+				}
+				elseif($string2 == "Principal activities1")
+				{
+					
+
+					/*if($num_of_activity == 1)
+					{*/
+						//$num = substr_count($reminder_info[$v]["document_content"], $match[$r]);
+					//}
+
+					/*if($num == 2)
+					{
+						$replace_string = ["{{".$string2."1}}", "{{".$string2."2}}"];
+
+						$get_activity1 = $this->db->query("select activity1 from client where company_code='".$company_code."'");
+
+						$get_activity1 = $get_activity1->result_array();
+
+						$get_activity2 = $this->db->query("select activity2 from client where company_code='".$company_code."'");
+
+						$get_activity2 = $get_activity2->result_array();
+
+						$content = [$get_activity1[0]["activity1"], $get_activity2[0]["activity2"]];
+
+
+					}
+					else
+					{*/
+						$replace_string = $match[$r];
+
+						$get_activity = $this->db->query("select activity1 from client where company_code='".$company_code."'");
+
+						$get_activity = $get_activity->result_array();
+
+						$content = $get_activity[0]["activity1"];
+					//}
+					//print_r($num_of_activity);
+					
+					//print_r($replace_string);
+					//$num_of_activity = $num;
+
+				}
+				elseif($string2 == "Principal activities2")
+				{
+					$replace_string = $match[$r];
+
+					$get_activity = $this->db->query("select activity2 from client where company_code='".$company_code."'");
+
+					$get_activity = $get_activity->result_array();
+
+					$content = $get_activity[0]["activity2"];
+				}
+				elseif($string2 == "Registered address")
+				{
+					$replace_string = $match[$r];
+
+					$get_address = $this->db->query("select postal_code, street_name, 	building_name, unit_no1, unit_no2 from client where company_code='".$company_code."'");
+
+					$get_address = $get_address->result_array();
+
+					if($get_address[0]["unit_no1"] != " " || $get_address[0]["unit_no2"] != " ")
+					{
+						$unit_no = ' #'.$get_address[0]["unit_no1"].' - '.$get_address[0]["unit_no2"];
+					}
+
+					$address = $get_address[0]["street_name"].$unit_no.' '.$get_address[0]["building_name"].' Singapore '.$query[0]["postal_code"];
+
+					$content = $address;
+				}
+				elseif($string2 == "Officer - director")
+				{
+					$officer_content = "";
+					$replace_string = $match[$r];
+
+					$get_director = $this->db->query("select name from client_officers left join officer on client_officers.officer_id = officer.id AND client_officers.field_type = officer.field_type where client_officers.company_code='".$company_code."' AND client_officers.position=1");
+
+					$get_director = $get_director->result_array();
+
+					for($t = 0; $t < count($get_director); $t++)
+					{
+						$officer_content = $get_director[$t]["name"]."<br/>".$officer_content;
+					}
+					$content = $officer_content;
+				}
+				elseif($string2 == "Chairman")
+				{
+					$replace_string = $match[$r];
+
+					$member_shares_info = $this->db->query('select member_shares.*, officer.id as officer_id, officer.identification_no, officer.name, officer_company.id as officer_company_id, officer_company.register_no, officer_company.company_name, share_capital.id as share_capital_id, share_capital.class_id, share_capital.other_class, share_capital.currency_id, class.sharetype, currencies.currency from member_shares left join officer on member_shares.officer_id = officer.id and member_shares.field_type = officer.field_type left join officer_company on member_shares.officer_id = officer_company.id and member_shares.field_type = officer_company.field_type left join client_member_share_capital as share_capital on member_shares.client_member_share_capital_id = share_capital.id left join sharetype as class on class.id = share_capital.class_id left join currency as currencies on currencies.id = share_capital.currency_id where member_shares.company_code="'.$company_code.'" GROUP BY member_shares.field_type, member_shares.officer_id');
+
+					if ($member_shares_info->num_rows() > 0) 
+			        {
+			        	$client_signing_info = $this->db->query('select * from client_signing_info where company_code ="'.$company_code.'"');
+						if ($client_signing_info->num_rows() > 0) 
+						{
+							$chairman = $client_signing_info->result()[0]->chairman;
+
+							//$res = array();
+				            foreach($member_shares_info->result_array() as $row) 
+				            {
+				              if($row['name'] != null)
+				              {
+				                
+				                if($row['officer_id'] == $chairman)
+				                {
+				                	$content = $row['name'];
+				                }
+				              }
+				              else if($row['company_name'] != null)
+				              {
+				                if($row['officer_company_id'] == $chairman)
+				                {
+				                	$content = $row['company_name'];
+				                }
+				              }
+				              
+				            }
+			            }
+						
+			        }
+			        else
+			        {
+			        	$content = "";
+			        }
+
+					/*$get_firm_name = $this->db->query("select name from firm where user_id='".$reminder_info[$v]["user_id"]."'");
+
+					$get_firm_name = $get_firm_name->result_array();
+
+					$content = $get_firm_name[0]["name"];*/
+				}
+				elseif($string2 == "Director signing 1")
+				{
+					$replace_string = $match[$r];
+
+					$director1 = $this->db->query('select * from client_signing_info where company_code ="'.$company_code.'"');
+
+					$director1 = $director1->result()[0]->director_signature_1;
+
+					$get_director1 = $this->db->query("select name from client_officers left join officer on client_officers.officer_id = officer.id AND client_officers.field_type = officer.field_type where client_officers.company_code='".$company_code."' AND client_officers.id='".$director1."'");
+
+					$get_director1 = $get_director1->result_array();
+
+					$content = $get_director1[0]["name"];
+
+				}
+				elseif($string2 == "Director signing 2")
+				{
+					$replace_string = $match[$r];
+
+					$director2 = $this->db->query('select * from client_signing_info where company_code ="'.$company_code.'"');
+
+					$director2 = $director2->result()[0]->director_signature_2;
+
+					$get_director2 = $this->db->query("select name from client_officers left join officer on client_officers.officer_id = officer.id AND client_officers.field_type = officer.field_type where client_officers.company_code='".$company_code."' AND client_officers.id='".$director2."'");
+
+					$get_director2 = $get_director2->result_array();
+
+					$content = $get_director2[0]["name"];
+
+				}
+				elseif($string2 == "Our firm - name")
+				{
+					$replace_string = $match[$r];
+
+					$get_firm_name = $this->db->query("select name from firm where $id='".$firm_id."'");
+
+					$get_firm_name = $get_firm_name->result_array();
+
+					$content = $get_firm_name[0]["name"];
+				}
+				elseif($string2 == "Our firm - Telephone")
+				{
+					$replace_string = $match[$r];
+
+					$get_firm_telephone = $this->db->query("select telephone from firm where id='".$firm_id."'");
+
+					$get_firm_telephone = $get_firm_telephone->result_array();
+
+					$content = $get_firm_telephone[0]["telephone"];
+				}
+				elseif($string2 == "Our firm - Fax")
+				{
+					$replace_string = $match[$r];
+
+					$get_firm_fax = $this->db->query("select fax from firm where id='".$firm_id."'");
+
+					$get_firm_fax = $get_firm_fax->result_array();
+
+					$content = $get_firm_fax[0]["fax"];
+				}
+				elseif($string2 == "Our firm - Email")
+				{
+					$replace_string = $match[$r];
+
+					$get_firm_email = $this->db->query("select email from firm where id='".$firm_id."'");
+
+					$get_firm_email = $get_firm_email->result_array();
+
+					$content = $get_firm_email[0]["email"];
+				}
+				elseif($string2 == "Our firm - URL")
+				{
+					$replace_string = $match[$r];
+
+					$get_firm_url = $this->db->query("select url from firm where id='".$firm_id."'");
+
+					$get_firm_url = $get_firm_url->result_array();
+
+					$content = $get_firm_url[0]["url"];
+				}
+				elseif($string2 == "Our firm - Address")
+				{
+					$replace_string = $match[$r];
+
+					$get_firm_address = $this->db->query("select postal_code, street_name, 	building_name, unit_no1, unit_no2 from firm where id='".$firm_id."'");
+
+					$get_firm_address = $get_firm_address->result_array();
+
+					if($get_firm_address[0]["unit_no1"] != " " || $get_firm_address[0]["unit_no2"] != " ")
+					{
+						$unit_no = ' #'.$get_firm_address[0]["unit_no1"].' - '.$get_firm_address[0]["unit_no2"];
+					}
+
+					$firm_address = $get_firm_address[0]["street_name"].$unit_no.' '.$get_firm_address[0]["building_name"].' Singapore '.$query[0]["postal_code"];
+
+					$content = $firm_address;
+				}
+				//print_r($content);
+				$new_contents = str_replace($replace_string, $content, $new_contents);
+				//echo json_encode($latest_contents);
+				
+			}
+			return $new_contents;
+		}
+		else
+		{
+			return $new_contents;
+		}
+   	}
+
+}

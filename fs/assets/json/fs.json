@@ -1,0 +1,74 @@
+[
+	{
+		"opinion": [
+			{
+				"value" : "Unqualified",
+				"name"	: "Unqualified"
+			},
+			{
+				"value" : "Qualified",
+				"name"	: "Qualified"
+			},
+			{
+				"value" : "Adverse",
+				"name"	: "Adverse"
+			},
+			{
+				"value" : "Disclaimer",
+				"name"	: "Disclaimer"
+			}
+		],
+		"key_audit_matter": [
+			{
+				"value" : "unqualified",
+				"name"	: "unqualified"
+			},
+			{
+				"value" : "qualified",
+				"name"	: "qualified"
+			},
+			{
+				"value" : "an adverse opinion",
+				"name"	: "an adverse opinion"
+			}
+		],
+		"group_type": [
+			{	
+				"value" : "1",
+				"name"  : "No"
+			},
+			{	
+				"value" : "2",
+				"name"  : "1 Subsidiary only"
+			},
+			{	
+				"value" : "3",
+				"name"  : "More than 1 Subsidiary"
+			}
+		],
+		"accounting_standard_list": [
+			{	
+				"value" : "1",
+				"name"  : "International"
+			},
+			{	
+				"value" : "2",
+				"name"  : "Singapore"
+			},
+			{	
+				"value" : "3",
+				"name"  : "Small Entities (SME)"
+			}
+		],
+		"act_applicable_list": [
+			{	
+				"value" : "1",
+				"name"  : "Companies Act, Chapter 50"
+			},
+			{	
+				"value" : "2",
+				"name"  : "Charities Act"
+			}
+		]
+	}
+]

@@ -1,0 +1,21 @@
+/* Add here all your JS customizations */
+
+function checkbox(x) {
+    return '<center><input class="checkbox multi-select" type="checkbox" name="val[]" value="' + x + '" /></center>';
+}
+
+function user_statusx(x) {
+    var y = x.value.split("__");
+    return y[0] == 1 ?
+    '<a href="'+site.base_url+'auth/deactivate/'+ y[1] +'" data-toggle="modal" data-target="#myModal"><span class="label label-success"><i class="fa fa-check"></i> '+lang['active']+'</span></a>' :
+    '<a href="'+site.base_url+'auth/activate/'+ y[1] +'"><span class="label label-danger"><i class="fa fa-times"></i> '+lang['inactive']+'</span><a/>';
+}
+
+function user_status(x) {
+	// console.log(x);
+    var y = x.split("__");
+	// alert(x);
+    return y[0] == 1 ?
+    '<span class="label label-success"><i class="fa fa-check"></i> Active</span>' :
+    '<a href="auth/activate/'+ y[1] +'"><span class="label label-danger"><i class="fa fa-times"></i> Inactive</span><a/>';
+}

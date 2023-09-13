@@ -1,0 +1,2879 @@
+[
+	{
+		"table_settings":[
+		{
+			"table_name" : "Employee benefits expense (header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 55,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Employee benefits expense (header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 55,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+
+		{
+			"table_name" : "Employee benefits expense (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 55,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Employee benefits expense (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 55,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 4 - Profit Before Tax (header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 56,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4, 5, 6]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 4 - Profit Before Tax (header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 56,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 4 - Profit Before Tax (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 56,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 4 - Profit Before Tax (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 56,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4, 5, 6]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_2)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4, 5]
+						}
+					],
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+
+		{
+			"table_name" : "Note 5 - Tax expense (table_2) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_2) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_3) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 5 - Tax expense (table_3) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 57,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 6 - Investment in subsidiaries (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 58,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4, 5]
+						}
+					],
+					"all" : []
+				}
+			]
+		},
+		{
+			"table_name" : "Note 6 - Investment in subsidiaries (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 58,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4, 5]
+						}
+					],
+					"all" : []
+				}
+			]
+		},
+		{
+			"table_name" : "Note 6 - Investment in subsidiaries (i) (table_1)(Small FRS)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 58,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [],
+					"clear_tr_after_row": 7
+				}
+			]
+		},
+		{
+			"table_name" : "Note 6 - Investment in subsidiaries (i) (table_1)",
+			"first_set" : 2,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 58,
+			"actual_linked_fs_ntfs_template_id" : 59
+		},
+		{
+			"table_name" : "Note 6 - Investment in subsidiaries (ii) (table_1)",
+			"first_set" : 2,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 58,
+			"actual_linked_fs_ntfs_template_id" : 60
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_1) (not first set)", 
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_2)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" 	   : [],
+					"clear_tr_after_row": 7
+				}
+			]
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_3)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_3) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_3)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 7 - Investment in associates (table_3) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 61,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 8 - Investment in joint venture (table_1)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 62,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" 	   : [],
+					"clear_tr_after_row": 7
+				}
+			]
+		},
+		{
+			"table_name" : "Note 8 - Investment in joint venture (table_2)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 62,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 8 - Investment in joint venture (table_2) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 62,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 8 - Investment in joint venture (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 62,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 8 - Investment in joint venture (table_2) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 62,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 9 - Intangible assets (table_1)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 63,
+			"hide_column_data" : [
+				{
+					"start_from_row" : 10	
+				}
+			]
+		},
+		{
+			"table_name" : "Note 10 - Insured benefits (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 64,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 10 - Insured benefits (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 64,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 10 - Insured benefits (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 64,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 10 - Insured benefits (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 64,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3] 
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties cost_model (table_1)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 65
+		},
+
+		{
+			"table_name" : "Note 11 - Investment properties (table_2)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_2) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_2) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_3)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 65
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_4)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [],
+					"clear_tr_after_row": 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_5)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_5) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_5)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 11 - Investment properties (table_5) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 65,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 12 - Property, plant and equipment (table_1)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 66
+		},
+		{
+			"table_name" : "Note 13 - Available for sale (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 67,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 13 - Available for sale (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 67,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 13 - Available for sale (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 67,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 13 - Available for sale (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 67,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 14 - Inventories (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 68,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 14 - Inventories (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 68,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 3
+				}
+			]
+		},
+		{
+			"table_name" : "Note 14 - Inventories (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 68,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 14 - Inventories (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 68,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 3
+				}
+			]
+		},
+		{
+			"table_name" : "Note 15 - Contract assets and contract liabilities (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 69,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 15 - Contract assets and contract liabilities (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 69,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 15 - Contract assets and contract liabilities (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 69,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 15 - Contract assets and contract liabilities (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 69,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_2)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_2) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_2) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_3)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_3)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_3) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_3) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_4)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_4)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_4) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 16 - Trade and other receivables (table_4) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 70,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 17 - Other current assets (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 71,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 17 - Other current assets (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 71,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 17 - Other current assets (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 71,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 17 - Other current assets (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 71,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_2)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_2) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_2) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_3)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_3)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_3) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 5
+				}
+			]
+		},
+		{
+			"table_name" : "Note 18 - Cash and short-term deposits (table_3) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 72,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 5
+				}
+			]
+		},
+		{
+			"table_name" : "Note 21 - Deferred tax liabilities (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 81,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 21 - Deferred tax liabilities (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 81,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 21 - Deferred tax liabilities (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 81,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 21 - Deferred tax liabilities (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 81,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_2)(header)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 3,
+							"hide_column" : [2, 3]
+						},
+						{
+							"row" : 4,
+							"hide_column" : [2, 3]
+						}
+					],
+					"all" : []
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_2)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_3)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_3)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_3) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_3) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table 4)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table 4) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 6 
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table 4)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table 4) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_5)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_5) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 8
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_5)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 22 - Loans and borrowings (table_5) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 82,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 8
+				}
+			]
+		},
+		{
+			"table_name" : "Note 23 - Provision (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 83,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 23 - Provision (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 83,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 23 - Provision (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 83,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 23 - Provision (table_1) (not first set)", 
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 83,
+			"hide_column_data" : [
+				{
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 24 - Trade and other payables (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 84,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 24 - Trade and other payables (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 84,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 24 - Trade and other payables (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 84,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2, 3]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 24 - Trade and other payables (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 84,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 6
+				}
+			]
+		},
+		{
+			"table_name" : "Note 24 - Trade and other payables (table_2)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 84,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 24 - Trade and other payables (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 84,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 24 - Trade and other payables (table_2) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 84,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 24 - Trade and other payables (table_2) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 84,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 25 - Other current liabilities (table_1)(header)(first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 85,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 25 - Other current liabilities (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 85,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 25 - Other current liabilities (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 85,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 25 - Other current liabilities (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 85,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 26 - Related party transactions (table_1)(header)(first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 86,
+			"actual_linked_fs_ntfs_template_id" : 87,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 26 - Related party transactions (table_1) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 86,
+			"actual_linked_fs_ntfs_template_id" : 87,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"specific" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 26 - Related party transactions (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 86,
+			"actual_linked_fs_ntfs_template_id" : 87,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 26 - Related party transactions (table_1) (not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 86,
+			"actual_linked_fs_ntfs_template_id" : 87,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_1)(header)(first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 91,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_1) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 91,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 3
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 91,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_1) (not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 91,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 3
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_2)(header)(first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 91,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_2) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 91,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 91,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_2) (not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 91,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_3)(header)(first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 92,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_3) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 92,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 3
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_3)(header)(not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 92,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_3) (not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 92,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 3
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_4)(header)(first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 92,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_4) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 92,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_4)(header)(not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 92,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 27 - Commitments (table_4) (not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 89,
+			"actual_linked_fs_ntfs_template_id" : 92,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 4
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.2 - Financial Risk Management (table_1)(header)(group)",
+			"first_set" : 2,
+			"is_group_table": 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 98
+		},
+		{
+			"table_name" : "Note 29.2 - Financial Risk Management (table_1) (group)",
+			"first_set" : 2,
+			"is_group_table": 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 98
+		},
+		{
+			"table_name" : "Note 29.2 - Financial Risk Management (table_1)(header)(company)",
+			"first_set" : 2,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 98
+		},
+		{
+			"table_name" : "Note 29.2 - Financial Risk Management (table_1) (company)",
+			"first_set" : 2,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 98
+		},
+		{
+			"table_name" : "Note 29.3 - Financial Risk Management (table_1)(header)(first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 99,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.3 - Financial Risk Management (table_1) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 99,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 5
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.3 - Financial Risk Management (table_1)(header)(not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 99,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.3 - Financial Risk Management (table_1) (not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 99,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 5
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.3 - Financial Risk Management (table_2) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 99,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.3 - Financial Risk Management (table_2) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 99,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [2],
+					"clear_tr_after_row" : 5
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.3 - Financial Risk Management (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 99,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.3 - Financial Risk Management (table_2) (not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 99,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3],
+					"clear_tr_after_row" : 5
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.4 - Financial Risk Management (table_1) (group)",
+			"first_set" : 2,
+			"is_group_table": 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 100
+		},
+		{
+			"table_name" : "Note 29.4 - Financial Risk Management (table_1) (company)",
+			"first_set" : 2,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 100
+		},
+		{
+			"table_name" : "Note 29.4 - Financial Risk Management (table_2)(header)(first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 100,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.4 - Financial Risk Management (table_2) (first set)",
+			"first_set" : 1,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 100,
+			"hide_column_data" : [
+				{
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.4 - Financial Risk Management (table_2)(header)(not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 100,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 29.4 - Financial Risk Management (table_2) (not first set)",
+			"first_set" : 0,
+			"is_sub_category" : 1,
+			"linked_fs_ntfs_template_id" : 96,
+			"actual_linked_fs_ntfs_template_id" : 100,
+			"hide_column_data" : [
+				{
+					"specific" : [],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 30 - Fair Value of assets (table_1)(header)(group)",
+			"first_set" : 2,
+			"is_group_table": 1,
+			"linked_fs_ntfs_template_id" : 101
+		},
+		{
+			"table_name" : "Note 30 - Fair Value of assets (table_1)(header)(company)",
+			"first_set" : 2,
+			"is_group_table": 0,
+			"linked_fs_ntfs_template_id" : 101
+		},
+		{
+			"table_name" : "Note 30 - Fair Value of assets (table_1) (group)",
+			"first_set" : 2,
+			"is_group_table": 1,
+			"linked_fs_ntfs_template_id" : 101,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [],
+					"clear_tr_after_row" : 5
+				}
+			]
+		},
+		{
+			"table_name" : "Note 30 - Fair Value of assets (table_1) (company)",
+			"first_set" : 2,
+			"is_group_table": 0,
+			"linked_fs_ntfs_template_id" : 101,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [],
+					"all" : [],
+					"clear_tr_after_row" : 5
+				}
+			]
+		},
+		{
+			"table_name" : "Note 31 - Financial Instrument by category (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 102,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 31 - Financial Instrument by category (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 102,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 32 - Capital Management (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 103,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+					
+				}
+			]
+		},
+		{
+			"table_name" : "Note 32 - Capital Management (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 103,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 35 - Prior year adjustment (table_1)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 106
+		},
+		{
+			"table_name" : "Note 36 - Loss per ordinary share (table_1) (first set)",
+			"first_set" : 1,
+			"linked_fs_ntfs_template_id" : 107,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"all" : [2]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 36 - Loss per ordinary share (table_1) (not first set)",
+			"first_set" : 0,
+			"linked_fs_ntfs_template_id" : 107,
+			"hide_column_data" : [
+				{
+					"hide_company_title" : [
+						{
+							"row" : 2,
+							"hide_column" : [1, 2, 3, 4]
+						}
+					],
+					"specific" : [
+						{
+							"row" : 2,
+							"hide_column" : [2]
+						}
+					],
+					"all" : [2, 3]
+				}
+			]
+		},
+		{
+			"table_name" : "Note 37 - Segmental Reporting (table_1)(group)",
+			"first_set" : 2,
+			"is_group_table": 1,
+			"linked_fs_ntfs_template_id" : 108
+		},
+		{
+			"table_name" : "Note 37 - Segmental Reporting (table_1)(company)",
+			"first_set" : 2,
+			"linked_fs_ntfs_template_id" : 108
+		}
+	]}
+]

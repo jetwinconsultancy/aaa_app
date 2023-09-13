@@ -1,0 +1,222 @@
+<section class="panel">
+	<div class="panel-body">
+		<div class="col-md-12">
+		<?php $attrib = array('class' => 'form-horizontal', 'data-toggle' => 'validator', 'role' => 'form');
+			echo form_open_multipart("personprofile/update", $attrib);
+			
+		?>
+				<section class="panel" id="wPerson">
+					<header class="panel-heading">
+						<h2 class="panel-title"><?=$page_name?></h2>
+					</header>
+					<div class="panel-body">
+						<table class="table table-bordered table-striped table-condensed mb-none" >
+							<thead>
+								<tr>
+									<th>Type <?=$person->tipe?></th>
+									<td>
+										<!--select data-plugin-selectTwo id="select_edit_p" class="form-control populate"-->
+										<select id="select_edit_p" class="form-control">
+											<!--optgroup label="Type"-->
+												<option value="Auditor" <?php if($person->tipe=='Auditor') echo ' Selected ';?>Auditor</option>
+												<option value="Company" <?php if($person->tipe=='Company') echo ' Selected ';?>>Company</option>
+												<option value="Individu" <?php if($person->tipe=='Individu') echo ' Selected ';?>>Individual</option>
+											<!--/optgroup-->
+										</select></td>
+								</tr>
+								<tr>
+									<th>ID <?php print_r($person);?></th>
+									<td>
+										<!--div class="input-group col-md-8" style="float:left;">
+											<input type="text" class="form-control input-sm" id="w2-username" name="username" required placeholder="Search ID">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="submit" style="height:30px;"><i class="fa fa-search"></i></button>
+											</span>
+										</div>
+										<div class=" col-md-4"   style="padding:0px 0px 0px 5px;">
+											<input type="file" class="form-control input-sm" id="w2-username" name="username" required placeholder="Upload">
+										</div-->
+										<div class="input-group col-md-8" style="float:left;">
+											<input type="hidden" class="form-control input-sm" id="w2-username" name="oldgid" value="<?=$person->gid?>">
+											<input type="text" class="form-control input-sm" id="w2-username" name="gid" required value="<?=$person->gid?>">
+										</div>
+										<div class=" col-md-4"   style="padding:0px 0px 0px 5px;">
+											<input type="file" class="form-control input-sm" id="w2-username" name="username" placeholder="Upload">
+										</div>
+									</td>				
+								</tr>
+								<tr>
+									<th>Name</th>
+									<td><input type="text" class="form-control input-xs" name="nama" value="<?=$person->nama?>"/></td>
+								</tr>
+								<tr>
+									<th>Date Of Birth</th>
+									<td><input type="text" class="form-control" name="date_of_birth" data-plugin-datepicker data-date-format="dd/mm/yyyy" value="<?=$this->sma->fed($person->date_of_birth)?>"/></td>
+									
+								</tr><tr>
+									<th>Address</th>
+									<td><label><input type="radio" id="local_edit" name="addresstype" checked value="Local"/>&nbsp;&nbsp;Local</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<label><input type="radio" id="foreign_edit" name="addresstype" value="Foreign"/>&nbsp;&nbsp;Foreign Address</label></td>
+								</tr>
+								<tr id="tr_local_edit">
+									<th></th>
+									<td>
+										<div style="margin-bottom:5px;">
+											<label style="width: 25%;float:left;margin-right: 20px;">Postal Code :</label>
+											<div class="input-group" style="width: 40%;" >
+											<input type="text" class="form-control input-sm" id="w2-username" name="zipcode" required placeholder="Search Postal">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="submit" style="height:30px;"><i class="fa fa-search"></i></button>
+											</span>
+											</div>
+										</div>
+										<div style="margin-bottom:5px;">
+											<label style="width: 25%;float:left;margin-right: 20px;">Street Name :</label>
+														<input style="width: 51%;" type="text" class="form-control input-sm" id="w2-username" name="street">
+										
+										</div>
+										<div style="margin-bottom:5px;">
+											<label style="width: 25%;float:left;margin-right: 20px;">Building Name :</label>
+											<input style="width: 51%;" type="text" class="form-control input-sm" id="w2-username" name="buildingname">
+										
+										</div>
+										<div style="margin-bottom:5px;">
+											<label style="width: 25%;float:left;margin-right: 20px;">Unit No :</label>
+														<input style="width: 10%; float: left; margin-right: 10px;" type="text" class="form-control input-sm" id="w2-username" name="unit_no1">
+														<input style="width: 10%;" type="text" class="form-control input-sm" id="w2-username" name="unit_no2" >
+										
+										</div>
+										<div style="margin-bottom:5px;">
+											<label  id="alternate_label_edit" style="width: 25%;float:left;margin-right: 20px;"><input type="checkbox">&nbsp;&nbsp;Alternate Address : </label>
+											<textarea style="width:50%;height:100px;display:none" name="alternate_text_edit"></textarea>
+										</div>
+									</td>
+								</tr>
+								<tr id="tr_foreign_edit" style="display:none;">
+									
+									<td></td>
+									<td>
+										<label style="width: 25%;float:left;margin-right: 20px;"> Foreign Address :</label>
+										<textarea style="width:50%;height:100px;"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th>Nationality</th>
+									<td>
+										<!--select data-plugin-selectTwo class="form-control populate"-->
+										<select class="form-control">
+											<!--optgroup label="Nationality"-->
+												<option value="Malaysia" <?php if($person->tipe=='Malaysia') echo ' Selected ';?>>Malaysia</option>
+												<option value="Singapore" <?php if($person->tipe=='Singapore') echo ' Selected ';?>>Singapore</option>
+											<!--/optgroup-->
+										</select></td>
+								</tr>
+								<tr>
+									<th>Citizen</th>
+									<td><?php
+											// print_r($sales);
+											$ctz[""] = [];
+											foreach ($citizen as $cs) {
+												$ctz[$cs->id] = $cs->citizen;
+											}
+											echo form_dropdown('citizen', $ctz, $person->citizen, 'id="citizen" name="citizen" class="form-control" style="width:100%;"');
+										
+											?>
+									</td></tr>
+								<tr>
+									<th>Local Fixed Line</th>
+									<td><input type="text" class="form-control input-xs" name="local_fix_line" value=""/></td>
+								</tr>
+								<tr>
+									<th>Local Mobile</th>
+									<td><input type="text" class="form-control input-xs" name="phone"  value="<?=$person->phone?>"/></td>
+								</tr>
+								<tr>
+									<th>Email</th>
+									<td><input type="text" class="form-control input-xs"  name="email" value="<?=$person->email?>"/></td>
+								</tr>
+								<tr id="represen_edit">
+									<th>Representative</th>
+									<td><input type="text" class="form-control input-xs" value=""/></td>
+								</tr>
+								
+							</thead>
+						</table>
+						
+					
+					</div>
+					<footer class="panel-footer">
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<!--button class="btn btn-primary modal-confirm">Confirm</button-->
+								<input type="submit" class="btn btn-primary " value="Save">
+							<a href="<?= base_url();?>personprofile" class="btn btn-default">Cancel</a>
+							</div>
+						</div>
+					</footer>
+				</section>
+		<?= form_close();?>					
+		</div>
+	</div>
+	
+<!-- end: page -->
+</section>
+
+<script>
+			$("#individual_edit_p").hide();
+			$("#company_edit_p").hide();
+			$("#shareholder_edit_p").hide();
+			 $("#represen_edit").hide();
+			$("#individual_add_p").hide();
+			$("#company_add_p").hide();
+			 $("#represen_add").hide();
+			$("#shareholder_add_p").hide();
+	$("#select_edit_p").on('change',function(){
+			$("#individual_edit_p").hide();
+			$("#company_edit_p").hide();
+			$("#shareholder_edit_p").hide();
+			 $("#represen_edit").hide();
+		if ($(this).val() == 'comp'){
+			$("#company_edit_p").show();
+			 $("#represen_edit").show();
+		}else if ($(this).val() == 'indv'){
+			$("#individual_edit_p").show();
+			$("#shareholder_edit_p").show();
+		}
+	});
+	$("#select_add_p").on('change',function(){
+			$("#individual_add_p").hide();
+			$("#company_add_p").hide();
+			 $("#represen_add").hide();
+			$("#shareholder_add_p").hide();
+		if ($(this).val() == 'comp'){
+			$("#company_add_p").show();
+			 $("#represen_add").show();
+		}else if ($(this).val() == 'indv'){
+			$("#individual_edit_p").show();
+			$("#shareholder_edit_p").show();
+		}
+	});
+	$("#local_add").click(function() {
+		$("#tr_foreign_add").hide();
+		$("#tr_local_add").show();
+	});
+	$("#foreign_add").click(function() {
+		$("#tr_foreign_add").show();
+		$("#tr_local_add").hide();
+	});
+	$("#local_edit").click(function() {
+		$("#tr_foreign_edit").hide();
+		$("#tr_local_edit").show();
+	});
+	$("#foreign_edit").click(function() {
+		$("#tr_foreign_edit").show();
+		$("#tr_local_edit").hide();
+	});
+	$("#alternate_label_edit").click(function() {
+		$("#alternate_text_edit").toggle();
+	});
+	$("#alternate_label_add").click(function() {
+		$("#alternate_text_add").toggle();
+	});
+</script>

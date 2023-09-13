@@ -1,0 +1,9 @@
+[
+	{
+		"partial_sub_account_list": [
+			{
+				"exclude_account" : ["C101", "C102"]
+			}
+		]
+	}
+]

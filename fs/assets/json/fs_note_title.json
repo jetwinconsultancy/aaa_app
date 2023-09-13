@@ -1,0 +1,241 @@
+[
+	{
+		"audit_report":[
+			"Key audit matter",
+			"Other information",
+			"Other information content"
+		],
+		"note_title": [
+			"Note 1 - Domicile and activities",
+			"Note 3 - Employee benefits expense",
+			"Note 4 - Profit before tax (title)",
+			"Note 5 - Tax expense",
+			"Note 6 - Investment in subsidiaries",
+			"Note 7 - Investment in associates",
+			"Note 8 - Investment in joint venture",
+			"Note 9 - Intangible assets",
+			"Note 10 - Insured benefits",
+			"Note 11 - Investment properties",
+			"Note 12 - Property, plant and equipment",
+			"Note 13 - Available for sale",
+			"Note 14 - Inventories",
+			"Note 15 - Contract assets and contract liabilities",
+			"Note 16 - Trade and other receivables",
+			"Note 17 - Other currenct assets",
+			"Note 18 - Cash and short-term deposits",
+			"Note 19 - Share capital",
+			"Note 20 - Other reserves",
+			"Note 21 - Deferred tax liabilities",
+			"Note 22 - Loans and borrowings",
+			"Note 23 - Provision",
+			"Note 24 - Trade and other payables",
+			"Note 25 - Other current liabilities",
+			"Note 26 - Related party transactions",
+			"Note 27 - Commitments",
+			"Note 28 - Contingencies",
+			"Note 29 - Financial Risk Management (title)",
+			"Note 30 - Fair Value of assets",
+			"Note 31 - Financial Instrument by category (title)",
+			"Note 32 - Capital Management",
+			"Note 33 - Events occuring after the reporting period",
+			"Note 34 - Comparative Figures",
+			"Note 35 - Prior year adjustment",
+			"Note 36 - Loss per ordinary share",
+			"Note 37 - Segmental Reporting",
+			"Note 38 - Going concern"
+		],
+		"sub_note_title": [
+			"Note 2 Basis of preparation",
+			"Note 2 Use of estimates and judgments",
+			"Note 2 Functional and presentation currency",
+			"Note 2 Basis of preparation",
+			"Note 2 Basis of consolidation (title)",
+			"Note 2 Foreign currency transactions and balances",
+			"Note 2 - Group accounting (title)",
+			"Note 2 - Revenue (title)",
+			"Note 2 - Employee benefits (1)",
+			"Note 2 - Leases",
+			"Note 2 - Borrowing costs (title)",
+			"Note 2 - Taxation (title)",
+			"Note 2 - Investment in associates",
+			"Note 2 - Investment in associate and joint ventures (title)",
+			"Note 2 - Intangible assets (title)",
+			"Note 2 - Investment properties",
+			"Note 2 - Property, plant and equipment",
+			"Note 2 - Impairment of assets",
+			"Note 2 - Impairment of non-financial assets",
+			"Note 2 - Inventories",
+			"Note 2 - Trade and other receivables",
+			"Note 2 - Trade payables",
+			"Note 2 - Financial instruments",
+			"Note 2 - Impairment of financial assets",
+			"Note 2 - Provision",
+			"Note 2 - Contingencies",
+			"Note 2 - Share capital",
+			"Note 2 - Financial guarantee",
+			"Note 2 - Convertible redeemable preference shares",
+			"Note 2 - Cash and cash equivalents",
+			"Note 2 - Related party (title)",
+			"Note 2 - Significant accounting estimates and judgments"
+		],
+		"textarea_input_tag":[
+			"Note 2 - Revenue content",
+			"Note 2 - Provision content",
+			"Note 2 - Investment properties (Model content)",
+			"Opinion",
+			"Opinion 2",
+			"Opinion content",
+			"Basis for opinion - content",
+			"Key audit matter",
+			"Other information",
+			"Other information content",
+			"Report on Other Legal and Regulatory Requirements",
+			"Note 3 - Employee benefits expense (content)",
+			"Note 5 - Tax expense (textarea 1)",
+			"Note 5 - Tax expense (content - company has unabsorbed tax losses)",
+			"Note 6 - Investment in subsidiaries (i) (content)",
+			"Note 7 - Investment in associates (1)",
+			"Note 8 - Investment in joint venture (1)",
+			"Note 9 - Intangible assets (textarea)",
+			"Note 9 - Intangible assets (1)",
+			"Note 10 - Insured benefits (1)",
+			"Note 11 - Investment properties (3)",
+			"Note 12 - Property, plant and equipment - 1",
+			"Note 12 - Property, plant and equipment (1)",
+			"Note 13 - Available for sale (1)",
+			"Note 14 - Inventories (1)",
+			"Note 15 - Contract assets and contract liabilities (2)",
+			"Note 16 - Trade and other receivables (1)",
+			"Note 16 - Trade and other receivables (3)",
+			"Note 16 - Trade and other receivables (6)",
+			"Note 16 - Trade and other receivables (4)",
+			"Note 19 - Share capital (1)",
+			"Note 22 - Loans and borrowings (2)",
+			"Note 22 - Loans and borrowings (3)",
+			"Note 23 - Provision (1)", 
+			"Note 26 - Related party transactions (ii) - content",
+			"Note 27 - Commitments (ii) (content)",
+			"Note 27 - Commitments (iii) (content)",
+			"Note 28 - Contingencies (i) (1)",
+			"Note 28 - Contingencies (ii) (1)",
+			"Note 29.3 - Financial Risk Management (2)",
+			"Note 29.3 - Financial Risk Management (3)",
+			"Note 29.3 - Financial Risk Management (4)",
+			"Note 29.3 - Financial Risk Management (5)",
+			"Note 33 - Events occuring after the reporting period (1)",
+			"Note 34 - Comparative Figures (1)"
+		],
+		"page_break_tags":[
+			"Page break - Statement of changes in equity"
+		],
+		"section_page_break_tags":[
+			"Section Break - Statement of changes in equity", 
+			"Section Break - (Note 9 - Intangible assets) - start",
+			"Section Break - (Note 9 - Intangible assets) - end",
+			"Section Break - (Note 11 - Investment properties) - start",
+			"Section Break - (Note 11 - Investment properties) - end",
+			"Section Break - (Note 11 - Investment properties - table 3) - start",
+			"Section Break - (Note 11 - Investment properties - table 3) - end",
+			"Section Break - (Note 12 - Property, plant and equipment) - start",
+			"Section Break - (Note 12 - Property, plant and equipment) - end",
+			"Section Break - (Note 29.4 - Financial Risk Management (table_1) (group)) - start",
+			"Section Break - (Note 29.4 - Financial Risk Management (table_1) (group)) - end",
+			"Section Break - (Note 29.4 - Financial Risk Management (table_1) (company)) - start",
+			"Section Break - (Note 29.4 - Financial Risk Management (table_1) (company)) - end"
+		],
+		"note_title_account_code" : [
+			{
+				"note_title" : "Note 3 - Employee benefits expense",
+				"account_code": "E101"
+			},
+			{
+				"note_title" : "Note 5 - Tax expense",
+				"account_code": "T000"
+			},
+			{
+				"note_title" : "Note 6 - Investment in subsidiaries",
+				"account_code": "A101"
+			},
+			{
+				"note_title" : "Note 7 - Investment in associates",
+				"account_code": "A102"
+			},
+			{
+				"note_title" : "Note 8 - Investment in joint venture",
+				"account_code": "A103"
+			},
+			{
+				"note_title" : "Note 9 - Intangible assets",
+				"account_code": "A106"
+			},
+			{
+				"note_title" : "Note 10 - Insured benefits",
+				"account_code": "A105"
+			},
+			{
+				"note_title" : "Note 11 - Investment properties",
+				"account_code": "A108"
+			},
+			{
+				"note_title" : "Note 2 - Property, plant and equipment",
+				"account_code": "A107"
+			},
+			{
+				"note_title" : "Note 12 - Property, plant and equipment",
+				"account_code": "A107"
+			},
+			{
+				"note_title" : "Note 13 - Available for sale",
+				"account_code": "A104"
+			},
+			{
+				"note_title" : "Note 14 - Inventories",
+				"account_code": "A201"
+			},
+			{
+				"note_title" : "Note 15 - Contract assets and contract liabilities",
+				"account_code": "A203"
+			},
+			{
+				"note_title" : "Note 16 - Trade and other receivables",
+				"account_code": "A202"
+			},
+			{
+				"note_title" : "Note 17 - Other currenct assets",
+				"account_code": "A204"
+			},
+			{
+				"note_title" : "Note 18 - Cash and short-term deposits",
+				"account_code": "A205"
+			},
+			{
+				"note_title" : "Note 19 - Share capital",
+				"account_code": "Q101"
+			},
+			{
+				"note_title" : "Note 20 - Other reserves",
+				"account_code": "Q102"
+			},
+			{
+				"note_title" : "Note 21 - Deferred tax liabilities",
+				"account_code": "L101"
+			},
+			{
+				"note_title" : "Note 22 - Loans and borrowings",
+				"account_code": "L102"
+			},
+			{
+				"note_title" : "Note 23 - Provision",
+				"account_code": "L202"
+			},
+			{
+				"note_title" : "Note 24 - Trade and other payables",
+				"account_code": "L201"
+			},
+			{
+				"note_title" : "Note 25 - Other current liabilities",
+				"account_code": "L203"
+			}
+		]
+	}
+]

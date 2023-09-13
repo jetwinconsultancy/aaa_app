@@ -1,0 +1,14 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.8",
+        "phpoffice/phpword": "^0.17.0",
+        "dompdf/dompdf": "^0.8.3",
+        "ncjoes/office-converter": "^1.0",
+        "gears/pdf": "*",
+        "php-unoconv/php-unoconv": "^4.1",
+        "pmill/aws-cognito": "^0.2.10",
+        "aws/aws-sdk-php": "^3.122",
+        "sendinblue/api-v3-sdk": "^6.1.0",
+        "web-token/jwt-key-mgmt": "^2.2"
+    }
+}

@@ -1,0 +1,13 @@
+iptables -A INPUT -s  -j DROP
+
+systemctl restart httpd
+
+composer create-project --prefer-dist laravel/laravel blog
+
+chmod -R o+w storage
+
+composer require "laravelcollective/html":"^5.2.0"
+
+php artisan make:auth
+
+wget -bcq url

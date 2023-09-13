@@ -1,0 +1,721 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Masterclient extends MY_Controller
+{
+
+    function __construct()
+    {
+        parent::__construct();
+
+        if (!$this->loggedIn) {
+            $this->session->set_userdata('requested_page', $this->uri->uri_string());
+            redirect('login');
+        }
+        $this->load->library('form_validation');
+        $this->load->model('db_model');
+        $this->load->model('master_model');
+        $this->digital_upload_path = 'files/';
+        $this->upload_path = 'assets/uploads/';
+        $this->thumbs_path = 'assets/uploads/thumbs/';
+        $this->image_types = 'gif|jpg|jpeg|png|tif';
+        $this->digital_file_types = 'zip|psd|ai|rar|pdf|doc|docx|xls|xlsx|ppt|pptx|gif|jpg|jpeg|png|tif|txt';
+        $this->allowed_file_size = '1024';
+    }
+
+    public function index()
+    {
+        $this->data['error'] = (validation_errors() ? validation_errors() : $this->session->flashdata('error'));
+		
+		if (isset($_POST['showall']))
+		{
+			$this->data['client'] = $this->db_model->getClient();
+		} elseif (isset($_POST['search'])) {
+			if (isset($_POST['pencarian']) && isset($_POST['tipe']))
+			{
+				// if ($_POST['pencarian'] != '')
+				// {
+					$this->data['client'] = $this->db_model->getClient($_POST['tipe'],$_POST['pencarian']);
+				// }
+			} 
+		}
+        // $this->data['quotes'] = $this->db_model->getLastestQuotes();
+        // $this->data['purchases'] = $this->db_model->getLatestPurchases();
+        // $this->data['transfers'] = $this->db_model->getLatestTransfers();
+        // $this->data['customers'] = $this->db_model->getLatestCustomers();
+        // $this->data['suppliers'] = $this->db_model->getLatestSuppliers();
+        // $this->data['chatData'] = $this->db_model->getChartData();
+        // $this->data['stock'] = $this->db_model->getStockValue();
+        // $this->data['bs'] = $this->db_model->getBestSeller();
+        // $this->data['users'] = $this->db_model->getUserList();
+        // $lmsdate = date('Y-m-d', strtotime('first day of last month')) . ' 00:00:00';
+        // $lmedate = date('Y-m-d', strtotime('last day of last month')) . ' 23:59:59';
+        // $this->data['lmbs'] = $this->db_model->getBestSeller($lmsdate, $lmedate);
+		
+        $bc = array(array('link' => '#', 'page' => lang('Clients')));
+        $meta = array('page_title' => lang('Clients'), 'bc' => $bc, 'page_name' => 'Clients');
+		// $this->data['page_name'] = 'Clients';
+        $this->page_construct('client/masterclient.php', $meta, $this->data);
+
+    }
+	
+	public function add ()
+	{
+        $bc = array(array('link' => '#', 'page' => lang('Add Clients')));
+        $meta = array('page_title' => lang('Add Clients'), 'bc' => $bc, 'page_name' => 'Add Clients');
+		$this->data['sharetype'] = $this->master_model->get_all_share_type();
+		$this->data['service'] = $this->master_model->get_all_service();
+		$this->data['service'] = $this->master_model->get_all_service();
+		$this->data['currency'] = $this->master_model->get_all_currency();
+		$this->data['citizen'] = $this->master_model->get_all_citizen();
+		$this->data['person'] = $this->master_model->get_all_person();
+		$this->data['typeofdoc'] = $this->master_model->get_all_typeofdoc();
+		$this->data['doccategory'] = $this->master_model->get_all_doccategory();
+		$this->data['client_service'] = $this->master_model->get_all_client_service();
+		// if ($this->session->userdata('unique_code') && $this->session->userdata('unique_code') != '')
+		// {
+			
+			// $uq = $this->master_model->get_draft_add_company($this->session->userdata('username'));
+			// if (isset($uq->unique_code))
+			// {
+			// $unique_code =$uq->unique_code;
+			// } else $unique_code =$this->session->userdata('unique_code');
+		// }
+		$this->session->set_userdata('unique_code', $unique_code);
+		// $this->data['unique_code'] = $unique_code;
+		// $q = $this->db->get_where('officer', array('unique_code' => $unique_code));
+        // if ($q->num_rows() > 0) {
+            // foreach (($q->result()) as $row) {
+                // $data[] = $row;
+            // }
+        // }
+		// $officer = 
+		$this->data['officer'] =$this->db_model->getOfficerUC($unique_code);
+		// $this->sma->print_arrays($this->data);
+        $this->page_construct('client/edit_client.php', $meta, $this->data);
+		
+	}
+
+	public function save()
+	{
+		// $this->sma->print_arrays($_POST);
+		// Data Company Info
+		$document=[];
+		// exit();
+		if ($_POST['Slct_file_setup_for']) $data['Slct_file_setup_for']=$_POST['Slct_file_setup_for'];
+		// $this->load->library('upload');
+            
+            if ($_FILES['file_setup_for']['size'] > 0) {
+				$config['upload_path'] = './uploads/';
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size']     = '100';
+				$config['max_width'] = '1024';
+				$config['max_height'] = '768';
+
+				$this->load->library('upload', $config);
+
+				// Alternately you can set preferences by calling the ``initialize()`` method. Useful if you auto-load the class:
+				$this->upload->initialize($config);
+                if ($this->upload->do_upload("file_setup_for"))
+				{
+				$pho=$this->upload->file_name;
+				}
+                    /* $error = $this->upload->display_errors();
+                    // $this->session->set_flashdata('error', $error);
+                    // redirect("masterclient");
+                } else {
+				} */
+			}
+		if ($pho) $data['file_setup_for']=$pho;
+		$data['clientcode']=$_POST['clientcode'];
+		$document['company_client_code'] =$data['clientcode'];
+		$data['unique_code']=$_POST['unique_code'];
+		$unique_code = $_POST['unique_code'];
+		$data['created_by']=$this->session->userdata('user_id');
+		$data['status']=$_POST['status'];
+		$data['uen']=$_POST['uen'];
+		$document['company_uen'] = $data['uen'];
+		// $data['file_setup1']=$_POST['file_setup1'];
+		// $data['file_setup2']=$_POST['file_setup2'];
+		$data['date_incorporation']=$this->sma->fld($_POST['date_incorporation']);
+		$document['company_date_incorporation'] = $data['date_incorporation'];
+		$data['client_name']=$_POST['client_name'];
+		$document['company_client_name'] = $data['client_name'];
+		$data['postal_code']=$_POST['postal_code'];
+		$data['city']=$_POST['city'];
+		$data['streetname']=$_POST['streetname'];
+		$data['buildingname']=$_POST['buildingname'];
+		$data['unitno']=$_POST['unitno'];
+		$data['unitno1']=$_POST['unitno1'];
+		$document['company_address'] = $data['buildingname']." ".$data['unitno']." ".$data['unitno1']." ".$data['streetname']." ".$data['city']." ".$data['postal_code'];
+		$data['activity1']=$_POST['activity1'];
+		$data['activity2']=$_POST['activity2'];
+		$document['company_activity'] = $data['activity1'].($data['activity2']?' & ':'').$data['activity2'];
+		$data['status']=$_POST['status'];
+		$data['cp']=$_POST['cp'];
+		$document['company_contact_person'] = $data['cp'];
+		$data['phone']=$_POST['phone'];
+		$document['company_phone'] = $data['phone'];
+		$data['email']=$_POST['email'];
+		$document['company_email'] = $data['company_email'];
+		$data['fax']=$_POST['fax'];
+		$document['company_fax'] = $data['company_fax'];
+		if (isset($_POST['listedcompany']) && $_POST['listedcompany'] == 'on') $data['listedcompany']=1; else $data['listedcompany']=0;
+		$data['chairman']=$_POST['chairman'];
+		$data['formername']=$_POST['formername'];
+		$document['company_former_name'] = $data['formername'];
+	
+		$q = $this->db->get_where("client", array("unique_code" => $unique_code));
+		if (!$q->num_rows())
+		{
+			if ($data['uen'] && $data['client_name'])
+			$this->db->insert("client",$data);
+		} else {
+			if ($data['uen'] && $data['client_name'])
+			$this->db->update("client",$data,array("unique_code" => $unique_code));
+		}
+			
+		// $document['company_client_code'] = 'kode PERUSAHAAN ';
+		// $document['company_uen'] = 'UEN Perusahaan';
+		// $document['company_uen'] = 'UEN Perusahaan';
+		$this->sma->generate_document($document,$_POST['unique_code']);
+		// $this->sma->print_arrays($data,$pho,$_FILES);
+        redirect("masterclient");
+		// $this->session->set_userdata('unique_code', '');
+	}
+	public function save_capital(){
+		$unique_code = $_POST['unique_code'];
+		$issued_amount_member = $_POST['issued_amount_member'];
+		$no_of_share_member = $_POST['no_of_share_member'];
+		$issued_currency_member = $_POST['issued_currency_member'];
+		$issued_sharetype_member = $_POST['issued_sharetype_member'];
+		// echo count($issued_amount_member);
+		
+				$this->db->delete("issued_sharetype",array("unique_code" => $unique_code));
+		for ($i=0;$i<count($issued_amount_member);$i++)
+		{
+			$issued_sharetype = [];
+			$issued_sharetype['unique_code'] = $unique_code;
+			$issued_sharetype['issued_amount_member'] = $this->sma->remove_comma($issued_amount_member[$i]);
+			$issued_sharetype['no_of_share_member'] = $this->sma->remove_comma($no_of_share_member[$i]);
+			$issued_sharetype['issued_currency_member'] = $issued_currency_member[$i];
+			$issued_sharetype['issued_sharetype_member'] = $issued_sharetype_member[$i];
+			// print_r($issued_sharetype);
+			// $q = $this->db->get_where("issued_sharetype", array("unique_code" => $unique_code, "issued_amount_member" => $issued_amount_member[$i],"no_of_share_member" => $no_of_share_member[$i],"issued_currency_member" => $issued_currency_member[$i]));
+			// if (!$q->num_rows())
+			// {
+				$this->db->insert("issued_sharetype",$issued_sharetype);
+			// } else {
+				// $this->db->update("issued_sharetype",$issued_sharetype,array("unique_code" => $unique_code, "issued_amount_member" => $issued_sharetype['issued_amount_member'],"no_of_share_member" => $issued_sharetype['no_of_share_member'],"issued_currency_member" => $issued_currency_member[$i]));
+			// }
+		}
+		$paid_share= '';
+		$paid_amount_member = $_POST['paid_amount_member'];
+		$paid_no_of_share_member = $_POST['paid_no_of_share_member'];
+		$paid_currency_member = $_POST['paid_currency_member'];
+		$paid_sharetype_member = $_POST['paid_sharetype_member'];
+				$this->db->delete("paid_share",array("unique_code" => $unique_code));
+		for ($i=0;$i<count($paid_amount_member);$i++)
+		{
+			$paid_share = [];
+			$paid_share['unique_code'] = $unique_code;
+			$paid_share['paid_amount_member'] = $this->sma->remove_comma($paid_amount_member[$i]);
+			$paid_share['paid_no_of_share_member'] = $this->sma->remove_comma($paid_no_of_share_member[$i]);
+			$paid_share['paid_currency_member'] = $paid_currency_member[$i];
+			$paid_share['paid_sharetype_member'] = $paid_sharetype_member[$i];
+			// $q = $this->db->get_where("paid_share", array("unique_code" => $unique_code, "paid_amount_member" => $paid_share['paid_amount_member'],"paid_no_of_share_member" => $paid_share['paid_no_of_share_member'],"paid_currency_member" => $paid_currency_member[$i]));
+			// if (!$q->num_rows())
+			// {
+				$this->db->insert("paid_share",$paid_share);
+			// } else {
+				// $this->db->update("paid_share",$paid_share,array("unique_code" => $unique_code, "paid_amount_member" => $paid_share['paid_amount_member'],"paid_no_of_share_member" => $paid_share['paid_no_of_share_member'],"paid_currency_member" => $paid_currency_member[$i]));
+			// }
+		}
+		$member_capital= '';
+		$nama_member_capital = $_POST['nama_member_capital'];
+		$sharetype_member = $_POST['sharetype_member'];
+		$shares_member_capital = $_POST['shares_member_capital'];
+		$no_share_paid_member_capital = $_POST['no_share_paid_member_capital'];
+		$gid_member_capital = $_POST['gid_member_capital'];
+		$currency_member_capital = $_POST['currency_member_capital'];
+		$amount_share_member_capital = $_POST['amount_share_member_capital'];
+		$amount_share_paid_member_capital = $_POST['amount_share_paid_member_capital'];
+				$this->db->delete("member_capital",array("unique_code" => $unique_code));
+		for ($i=0;$i<count($nama_member_capital);$i++)
+		{
+			$member_capital = [];
+			$member_capital['unique_code'] = $unique_code;
+			$member_capital['nama_member_capital'] = $nama_member_capital[$i];
+			$member_capital['sharetype_member'] = $sharetype_member[$i];
+			$member_capital['shares_member_capital'] = $this->sma->remove_comma($shares_member_capital[$i]);
+			$member_capital['no_share_paid_member_capital'] = $this->sma->remove_comma($no_share_paid_member_capital[$i]);
+			$member_capital['gid_member_capital'] = $gid_member_capital[$i];
+			$member_capital['currency_member_capital'] = $currency_member_capital[$i];
+			$member_capital['amount_share_member_capital'] = $this->sma->remove_comma($amount_share_member_capital[$i]);
+			$member_capital['amount_share_paid_member_capital'] = $this->sma->remove_comma($amount_share_paid_member_capital[$i]);
+			// $q = $this->db->get_where("member_capital", array("unique_code" => $unique_code, "nama_member_capital" => $nama_member_capital[$i]));
+			// if (!$q->num_rows())
+			$pho = '';
+            if ($_FILES['upload_certificate'.($i+1)]['size'] > 0) {
+				$config['upload_path'] = './uploads/';
+				$config['allowed_types'] = 'gif|jpg|png|pdf';
+				// $config['max_size']     = '100000';
+				// $config['max_width'] = '1024';
+				// $config['max_height'] = '768';
+
+				$this->load->library('upload', $config);
+
+				// Alternately you can set preferences by calling the ``initialize()`` method. Useful if you auto-load the class:
+				$this->upload->initialize($config);
+				// print_r($this->upload->do_upload('upload_certificate'.($i+1)));
+                if ($this->upload->do_upload("upload_certificate".($i+1)))
+				{
+					$pho=$this->upload->file_name;
+				}
+				$error = $this->upload->display_errors();
+			}
+				// print_r($pho);
+				// print_r($error);
+				// print_r($_FILES);
+			if ($pho != '') $member_capital['certificate']=$pho;
+			// {
+				$this->db->insert("member_capital",$member_capital);
+			// } else {
+				// $this->db->update("member_capital",$member_capital,array("unique_code" => $unique_code, "nama_member_capital" => $nama_member_capital[$i]));
+			// }
+		}
+		// $this->sma->print_arrays($member_capital);
+        redirect("masterclient");
+	}
+	public function save_charges(){
+		// $chargee= '';
+		$unique_code = $_POST['unique_code'];
+		$chargee_name = $_POST['chargee_name'];
+		$chargee_nature_of = $_POST['chargee_nature_of'];
+		$chargee_date_reg = $_POST['chargee_date_reg'];
+		$chargee_no = $_POST['chargee_no'];
+		$chargee_currency = $_POST['chargee_currency'];
+		$chargee_amount = $_POST['chargee_amount'];
+		$chargee_date_satisfied = $_POST['chargee_date_satisfied'];
+		$chargee_satisfied_no = $_POST['chargee_satisfied_no'];
+		$amount_share_paid_member_capital = $_POST['amount_share_paid_member_capital'];	
+		$this->db->delete("chargee",array("unique_code" => $unique_code));
+			
+		for ($i=0;$i<count($chargee_name);$i++)
+		{
+			$chargee = [];
+			$chargee['unique_code'] = $unique_code;
+			$chargee['chargee_name'] = $chargee_name[$i];
+			$chargee['chargee_nature_of'] = $chargee_nature_of[$i];
+			$chargee['chargee_date_reg'] = $chargee_date_reg[$i];
+			$chargee['chargee_no'] = $chargee_no[$i];
+			$chargee['chargee_currency'] = $chargee_currency[$i];
+			$chargee['chargee_amount'] = $chargee_amount[$i];
+			$chargee['chargee_date_satisfied'] = $chargee_date_satisfied[$i];
+			$chargee['chargee_satisfied_no'] = $chargee_satisfied_no[$i];
+			// $q = $this->db->get_where("chargee", array("unique_code" => $unique_code, "chargee_name" => $chargee_name[$i]));
+			// if (!$q->num_rows())
+			// {
+				$this->db->insert("chargee",$chargee);
+			// } else {
+				// $this->db->update("chargee",$chargee,array("unique_code" => $unique_code, "chargee_name" => $chargee_name[$i]));
+			// }
+		}
+		// echo "<pre>";
+		// print_r($chargee);
+		// echo "</pre>";
+		$this->session->set_userdata('open_unique_code',$unique_code);
+        redirect("masterclient/edit");
+	}
+	public function save_other(){
+		$unique_code = $_POST['unique_code'];
+		// print_r($_POST);
+		$client_others = [];
+		$client_others['unique_code'] = $unique_code;
+		$client_others['type_of_doc'] = $_POST['typeofdoc'];
+		$client_others['others_category'] = $_POST['doccategory'];
+		$client_others['others_remarks'] = $_POST['others_remarks'];
+		
+			$pho = '';
+            if ($_FILES['upload_file_others']['size'] > 0) {
+				$config['upload_path'] = './uploads/';
+				$config['allowed_types'] = 'gif|jpg|png|pdf';
+				// $config['max_size']     = '100000';
+				// $config['max_width'] = '1024';
+				// $config['max_height'] = '768';
+
+				$this->load->library('upload', $config);
+
+				// Alternately you can set preferences by calling the ``initialize()`` method. Useful if you auto-load the class:
+				$this->upload->initialize($config);
+				// print_r($this->upload->do_upload('upload_certificate'.($i+1)));
+                if ($this->upload->do_upload("upload_file_others"))
+				{
+					$pho=$this->upload->file_name;
+				}
+				$error = $this->upload->display_errors();
+			}
+				// print_r($pho);
+				// print_r($error);
+				// print_r($_FILES);
+			if ($pho != '') $client_others['files']=$pho;
+				
+		$this->db->delete("client_others",array("unique_code" => $unique_code));
+			$this->db->insert("client_others",$client_others);
+		// print_r($client_others);
+		$this->session->set_userdata('open_unique_code',$unique_code);
+        redirect("masterclient/edit/");
+	}
+	public function save_setup()
+	{
+		$unique_code = $_POST['unique_code'];
+		// print_r($_POST);
+		$client_setup = [];
+		$client_setup['unique_code'] = $unique_code;
+		$client_setup['setup_chairman'] = $_POST['setup_chairman']?$_POST['setup_chairman']:'-';
+		$client_setup['setup_director_signature1'] = $_POST['setup_director_signature1']?$_POST['setup_director_signature1']:'-';
+		$client_setup['setup_director_signature2'] = $_POST['setup_director_signature2']?$_POST['setup_director_signature2']:'-';
+		$this->db->delete("client_setup",array("unique_code" => $unique_code));
+			$this->db->insert("client_setup",$client_setup);
+		$this->db->delete("client_service",array("unique_code" => $unique_code));
+		for($i=0;$i<count($_POST['service_name']);$i++)
+		{
+			if ($_POST['service_amount'][$i])
+			{
+		$client_service = [];
+		$client_service['unique_code'] = $unique_code;
+		$client_service['service_name'] = $_POST['service_name'][$i];
+		$client_service['service_start_recurring'] = $this->sma->fsd($_POST['service_start_recurring'][$i]);
+		$client_service['service_end_recurring'] = $this->sma->fsd($_POST['service_end_recurring'][$i]);
+		$client_service['service_frequency'] = $_POST['service_frequency'][$i];
+		$client_service['service_amount'] = $_POST['service_amount'][$i]?str_replace(',','',$_POST['service_amount'][$i]):0;
+		// print_r($client_service);
+			$this->db->insert("client_service",$client_service);
+			}
+			
+		}
+		$this->session->set_userdata('open_unique_code',$unique_code);
+        redirect("masterclient/edit");
+		// print_r($client_others);
+		// $this->sma->print_arrays($client_setup,$client_service);
+	}
+	public function add_officer ()
+	{
+		// $this->load->library('form_validation');
+		// $this->load->helper('form');
+		$data['unique_code']=$_POST['unique_code'];
+		$data['nama']=$_POST['nama'];
+		$data['gid']=$_POST['id'];
+		// $q = $this->db->
+		$d =$this->db_model->getOfficerGID($_POST['id']);
+		// print_r($d);
+		if ($d > 0)
+		{
+			echo "Duplicate Goverment ID";
+		} else {
+			$data['address']=$_POST['address'];
+			$data['zipcode']=$_POST['zipcode'];
+			$data['street']=$_POST['street'];
+			$data['buildingname']=$_POST['buildingname'];
+			$data['unit_no1']=$_POST['unit_no1'];
+			$data['unit_no2']=$_POST['unit_no2'];
+			$data['nationality']=$_POST['nationality'];
+			$data['citizen']=$_POST['citizen'];
+			$data['date_of_birth']=$this->sma->fsd($_POST['date_of_birth']);
+			$dofficer = $data;
+			$dofficer['type']='Company';
+			$this->db->insert("person",$dofficer);
+			$data['position']=$_POST['position'];
+			$data['date_of_appointment']=$this->sma->fsd($_POST['date_of_appointment']);
+			$data['date_of_cessation']=$this->sma->fsd($_POST['date_of_cessation']);
+			$this->db->insert("officer",$data);
+			// echo $this->db->insert_id();
+			echo "Success Add";
+		}
+		// $this->sma->print_arrays($data);		
+		
+	}
+	public function delete_officer ($id)
+	{
+		echo $this->db->delete("officer",array('id'=>$id));
+	}
+	
+	public function delete($id)
+	{
+		$this->db->update("client",array('row_status'=>'1'),array('id'=>$id));
+        redirect("masterclient");
+	}
+	
+	public function edit ($id = null)
+	{
+		if(isset($_SESSION['open_unique_code']) && $_SESSION['open_unique_code'] !='')
+		{
+			$unique_code =$_SESSION['open_unique_code'];
+			$this->data['client'] = $this->db_model->getClientbyUcode($unique_code);
+			// exit();
+			$this->session->set_userdata('open_unique_code','');
+		}else{
+			$this->data['client'] = $this->db_model->getClientbyID($id);
+			$unique_code =$this->data['client']->unique_code;
+		}
+			// echo $unique_code;
+		// print_r($_SESSION['open_unique_code']);
+		$this->data['sharetype'] = $this->master_model->get_all_share_type();
+		$this->data['service'] = $this->master_model->get_all_service();
+		$this->data['currency'] = $this->master_model->get_all_currency();
+		$this->data['citizen'] = $this->master_model->get_all_citizen();
+		$this->data['citizen'] = $this->master_model->get_all_citizen();
+		$this->data['typeofdoc'] = $this->master_model->get_all_typeofdoc();
+		$this->data['doccategory'] = $this->master_model->get_all_doccategory();
+		$this->session->set_userdata('unique_code', $unique_code);
+		$this->data['officer'] =$this->db_model->getOfficerUC($unique_code);
+		// $this->data['issued_sharetype'] = $this->master_model->get_all_issued_sharetype($unique_code);
+		$this->data['paid_share'] = $this->master_model->get_all_paid_share($unique_code);
+		$this->data['member_capital'] = $this->master_model->get_all_member_capital($unique_code);
+		$this->data['person'] = $this->master_model->get_all_person();
+		$this->data['chargee'] = $this->master_model->get_all_chargee($unique_code);
+		$this->data['client_others'] = $this->master_model->get_typeofdoc($unique_code);
+		$this->data['allotment_member'] = $this->master_model->get_all_alotment_member($unique_code);
+		$this->data['allotment'] = $this->master_model->get_all_allotment_group($unique_code);
+		$this->data['client_service'] = $this->master_model->get_all_client_service($unique_code);
+		$this->data['client_setup'] = $this->master_model->get_all_client_setup($unique_code);
+			// $this->sma->print_arrays($this->data['member_capital']);
+        $bc = array(array('link' => '#', 'page' => lang('Edit Clients')));
+        $meta = array('page_title' => lang('Edit Clients'), 'bc' => $bc, 'page_name' => 'Edit Clients');
+		// $this->data['page_name'] = 'Clients';
+        $this->page_construct('client/edit_client.php', $meta, $this->data);
+		
+	}
+	
+	public function buyback ($unique_code)
+	{
+        $bc = array(array('link' => '#', 'page' => lang('Buy Back')));
+        $meta = array('page_title' => lang('Buy Back'), 'bc' => $bc, 'page_name' => 'Buy Back');
+		// $this->data['page_name'] = 'Clients';
+		$this->data['unique_code'] = $unique_code;
+		$this->data['sharetype'] = $this->master_model->get_all_share_type();
+		$this->data['service'] = $this->master_model->get_all_service();
+		$this->data['currency'] = $this->master_model->get_all_currency();
+        $this->page_construct('client/buyback.php', $meta, $this->data);
+		
+	}
+	
+	public function allotment ($unique_code)
+	{
+        $bc = array(array('link' => '#', 'page' => lang('Allotment')));
+        $meta = array('page_title' => lang('Allotment'), 'bc' => $bc, 'page_name' => 'Allotment');
+		// $this->data['page_name'] = 'Clients';
+		$this->data['unique_code'] = $unique_code;
+		$this->data['sharetype'] = $this->master_model->get_all_share_type();
+		$this->data['service'] = $this->master_model->get_all_service();
+		$this->data['currency'] = $this->master_model->get_all_currency();
+        $this->page_construct('client/allotment.php', $meta, $this->data);
+		
+	}
+	
+	public function save_allotment(){
+		// $this->sma->print_arrays($_POST);
+		$unique_code = $_POST['unique_code'];
+		$allotment['unique_code'] = $_POST['unique_code'];
+		$allotment['tgl'] = $this->sma->fld($this->sma->hrsd($_POST['date']));
+		// $allotment['issued_amount_member'] = $_POST['issued_amount_member'];
+		$allotment['sharetype_allotment'] = $_POST['sharetype_allotment'];
+		$allotment['currency'] = $_POST['currency'];
+		$allotment['allotment_share'] = $this->sma->remove_comma($_POST['Allotment_Share']);
+		$allotment['allotment_share_amount'] = $this->sma->remove_comma($_POST['Allotment_Share_amount']);
+		$this->db->insert("allotment",$allotment);
+		$id_allotment = $this->db->insert_id();
+		$gid = $_POST['gid'];
+		$nama = $_POST['nama'];
+		$share_allotment = $_POST['share_allotment'];
+		$amount_allotment = $_POST['amount_allotment'];
+		$sharepaid_allotment = $_POST['sharepaid_allotment'];
+		$amountpaid_allotment = $_POST['amountpaid_allotment'];
+		$certificate_allotment = $_POST['certificate_allotment'];
+		// echo count($issued_amount_member);
+		
+		// $this->sma->print_arrays($gid);
+				// $this->db->delete("issued_sharetype",array("unique_code" => $unique_code));
+		for ($i=0;$i<count($gid);$i++)
+		{
+			if ($gid[$i])
+			{
+				$allotmet_member = [];
+				$allotmet_member['unique_code'] = $unique_code;
+				$allotmet_member['id_allotment'] = $id_allotment;
+				$allotmet_member['gid'] = $gid[$i];
+				$allotmet_member['nama'] = $nama[$i];
+				$allotmet_member['share_allotment'] = $this->sma->remove_comma($share_allotment[$i]);
+				$allotmet_member['amount_allotment'] = $this->sma->remove_comma($amount_allotment[$i]);
+				$allotmet_member['sharepaid_allotment'] = $this->sma->remove_comma($sharepaid_allotment[$i]);
+				$allotmet_member['amountpaid_allotment'] = $this->sma->remove_comma($amountpaid_allotment[$i]);
+				$allotmet_member['certificate_allotment'] = $certificate_allotment[$i];
+			
+				$this->db->insert("allotment_member",$allotmet_member);
+			// $this->sma->print_arrays($allotmet_member);
+			}
+		}
+		// $this->db->insert("allotment",$member_capital);
+		// $this->sma->print_arrays($allotment);
+		// $this->session->set_userdata('open_unique_code',$unique_code);
+		$this->session->set_userdata('open_unique_code',$unique_code);
+		// print_r($_SESSION['open_unique_code']);
+        redirect("masterclient/edit/");
+	}
+	
+	public function hapus_allotment($id){
+		$this->db->delete('allotment',array('id'=>$id));
+		$this->db->delete('allotment_member',array('id_allotment'=>$id));
+	}
+	
+	public function read_buyback($unique_code,$sharetype,$currency)
+	{
+		$a = $this->master_model->get_all_allot_members($unique_code,$sharetype,$currency);
+		$i=1;
+		foreach($a as $b)
+		{
+			echo '<div class="hidden">';
+			echo '<input type="text" name="id[]" value="'.$b->id.'"/>';
+			echo '<input type="text" name="gid[]" value="'.$b->gid.'"/>';
+			echo '<input type="text" name="nama[]" value="'.$b->nama.'"/>';
+			echo '</div>';
+			echo '<tr><td>'.$i.'</td>
+			<td>'.$b->nama.'</td>
+			<td>'.$b->gid.'</td>
+			<td><input type="text" id="shareori_bb2" class=" form-control  number text-right" name="share_allotment[]" value="'.$b->share_allotment.'" readonly></div></td>
+			<td><input type="text" id="amountori_bb2" class=" form-control  number text-right" name="amount_allotment[]" value="'.$b->amount_allotment.'" readonly></td>
+			<td><input type="text" class="share_bb form-control  number text-right" name="sharebb_allotment[]" data-id="'.$i.'" data-gid="'.$b->gid.'" data-nama="'.$b->nama.'" data-shareori="'.$b->share_allotment.'" value="" ></td>
+			<td><input type="text" id="" class="amount_bb form-control number text-right"  name="amountbb_allotment[]" data-amountori="'.$b->amount_allotment.'"  data-id="'.$i.'" value="" ></td>
+			<td><input type="text" class="certificate_bb form-control" value="" name="certificate_allotment[]" data-id="'.$i.'" ></td>
+			</tr>';
+			$i++;
+		}
+	}
+	
+	public function read_buybackplain($unique_code,$sharetype,$currency)
+	{
+		$a = $this->master_model->get_all_allot_members($unique_code,$sharetype,$currency);
+		$i=1;
+		foreach($a as $b)
+		{
+			echo '<tr><td>'.$i.'</td>
+			<td>'.$b->nama.'</td>
+			<td>'.$b->gid.'</td>
+			<td>'.$b->share_allotment.'</td>
+			<td>'.$b->amount_allotment.'</td>
+			<td id="share_bb'.$i.'"></td>
+			<td id="amount_bb'.$i.'"></td>
+			<td id="total_share_left'.$i.'"></td>
+			<td id="total_amount_left'.$i.'"></td>
+			<td id="certificate'.$i.'"></td>
+			</tr>';
+			$i++;
+		}
+	}
+	
+	public function search_member($type,$term)
+	{
+		// echo $type;
+		if ($type=='nama')
+		{
+			$a = $this->master_model->get_all_person($term);
+		} else {
+			$a = $this->master_model->get_all_person('','',$term);
+		}
+		foreach($a as $b)
+		{
+			echo "<tr><td>".$b->gid."<td>".$b->nama."</td><td><a class=\"add_director btn-default btn\" style=\"padding:2px 3px;\" data-gid='".$b->gid."' data-nama='".$b->nama."'>Add</a></td></tr>";
+		}
+		
+	}
+	
+	public function transfer ()
+	{
+        $bc = array(array('link' => '#', 'page' => lang('Transfer')));
+        $meta = array('page_title' => lang('Transfer'), 'bc' => $bc, 'page_name' => 'Transfer');
+		// $this->data['page_name'] = 'Clients';
+        $this->page_construct('client/transfer.php', $meta, $this->data);
+		
+	}
+	public function get_certificate($unique_code)
+	{
+		$a = $this->master_model->get_all_certificate($unique_code);
+		$i = 1;
+		foreach($a as $b)
+		{
+			echo '<tr>
+				<td>'.$i.'</td>
+				<td>'.$this->sma->fed($b->tgl).'</td>
+				<td>'.$b->nama.'<br/>'.$b->gid.'</td>
+				<td>'.$b->share_allotment.'</td>
+				<td><a>'.$b->certificate_allotment.'</a></td>
+			</tr>';
+			$i++;
+		}
+	}
+	
+	public function unpaid_invoice ()
+	{
+        $bc = array(array('link' => '#', 'page' => lang('Unpaid Invoice')));
+        $meta = array('page_title' => lang('Unpaid Invoice'), 'bc' => $bc, 'page_name' => 'Unpaid Invoice');
+		// $this->data['page_name'] = 'Clients';
+        $this->page_construct('client/unpaid.php', $meta, $this->data);
+		
+	}
+	
+	public function create_billing ()
+	{
+        $bc = array(array('link' => '#', 'page' => lang('Create Billing')));
+        $meta = array('page_title' => lang('Create Billing'), 'bc' => $bc, 'page_name' => 'Create Billing');
+		// $this->data['page_name'] = 'Clients';
+        $this->page_construct('client/create_billing.php', $meta, $this->data);
+		
+	}
+	
+	public function unreceived_doc ()
+	{
+        $bc = array(array('link' => '#', 'page' => lang('Unreceived Document')));
+        $meta = array('page_title' => lang('Unreceived Document'), 'bc' => $bc, 'page_name' => 'Unreceived Document');
+		// $this->data['page_name'] = 'Clients';
+        $this->page_construct('client/unreceived.php', $meta, $this->data);
+		
+	}
+	
+	public function setting_filing ()
+	{
+        $bc = array(array('link' => '#', 'page' => lang('Filing')));
+        $meta = array('page_title' => lang('Filing'), 'bc' => $bc, 'page_name' => 'Filing');
+		// $this->data['page_name'] = 'Clients';
+        $this->page_construct('client/setting_filing.php', $meta, $this->data);
+		
+	}
+	
+	public function modal_next ()
+	{
+		print_r($_POST);
+        $bc = array(array('link' => '#', 'page' => lang('Confirm Changes Clients')));
+        $meta = array('page_title' => lang('Confirm Changes  Clients'), 'bc' => $bc, 'page_name' => 'Confirm Changes  Clients');
+		// $this->data['page_name'] = 'Clients';
+        $this->page_construct('client/confirm_changes.php', $meta, $this->data);
+		
+	}
+
+	public function save_buyback()
+	{
+		$this->sma->print_arrays($_POST);
+	}
+	
+	public function get_officer($gid)
+	{
+		// echo "A";
+		$q = $this->db->query("select * from officer where gid='".$gid."' order by id desc");
+		if ($q->num_rows() > 0) {
+			echo json_encode($q->result()[0]);
+            // foreach (($q->result()) as $row) {
+                // $data[] = $row;
+            // }
+            // return $data;
+        } else echo 0;
+		// echo $gid;
+		// $this->sma->print_arrays($_POST);
+	}
+}
